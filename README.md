@@ -23,7 +23,7 @@ Ontology is everywhere — search engines, knowledge graphs, semantic web — bu
 
 ### Demo
 
-- **Live:** _(GitHub Pages URL will appear here once published)_
+- **Live:** **https://amazingsyp.github.io/pokemon-ontology/**
 - **Offline:** Just open `docs/index.html` in any modern browser (or [build it yourself](#build-it-yourself)). Works offline, mobile-friendly, no server needed.
 
 ### Highlights
@@ -128,7 +128,7 @@ Copyright © 2026 amazingsyp
 
 ### 실행 방법
 
-- **온라인:** _(퍼블리시 후 GitHub Pages URL이 여기 표시됩니다)_
+- **온라인:** **https://amazingsyp.github.io/pokemon-ontology/**
 - **오프라인:** `docs/index.html`을 브라우저에서 열기만 하면 됩니다. 모바일 지원, 서버 불필요.
 
 ### 핵심 특징
