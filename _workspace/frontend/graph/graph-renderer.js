@@ -21,21 +21,43 @@
 (function (global) {
   'use strict';
 
+  // IRI에서 사람이 읽을 수 있는 라벨 추출. "poke:pokemon-25" → "pokemon-25" 등.
+  function labelFromIri(iri) {
+    return String(iri).replace(/^[^:]+:/, '');
+  }
+
+  // 노드 정의가 없는 IRI에 대해 kind 추론. 'pokemon-NN', 'type-xxx', 'gen-N', 'evolution-N'
+  // 같은 소문자 슬러그는 인스턴스로, PascalCase("FireType", "NormalTypePokemon")는 클래스로.
+  function inferKind(iri) {
+    const local = labelFromIri(iri);
+    if (/^[A-Z]/.test(local)) return 'class';
+    return 'instance';
+  }
+
   /**
    * sliceData → Cytoscape elements 배열로 변환.
+   * 엣지의 source/target이 nodes 배열에 누락되어 있어도 자동으로 노드를 생성한다
+   * (특히 추론 결과로 도출된 엣지가 신규 클래스를 참조할 때 cytoscape가 죽지 않도록).
    * 원본 데이터를 직접 mutate 하지 않는다.
    */
   function buildElements(sliceData) {
-    const nodes = (sliceData.nodes || []).map((n) => ({
-      group: 'nodes',
-      data: {
+    const nodeMap = new Map();
+    (sliceData.nodes || []).forEach((n) => {
+      if (!n || !n.id) return;
+      nodeMap.set(n.id, {
         id: n.id,
-        label: n.label != null ? String(n.label) : n.id,
+        label: n.label != null ? String(n.label) : labelFromIri(n.id),
         kind: n.type || 'instance'
-      }
-    }));
+      });
+    });
 
     const edges = (sliceData.edges || []).map((e, idx) => {
+      // 누락 노드 자동 보강
+      [e.source, e.target].forEach((iri) => {
+        if (iri && !nodeMap.has(iri)) {
+          nodeMap.set(iri, { id: iri, label: labelFromIri(iri), kind: inferKind(iri) });
+        }
+      });
       const id = e.id || `${e.source}--${e.label || e.kind || 'rel'}-->${e.target}#${idx}`;
       return {
         group: 'edges',
@@ -49,6 +71,7 @@
       };
     });
 
+    const nodes = Array.from(nodeMap.values()).map((data) => ({ group: 'nodes', data }));
     return [...nodes, ...edges];
   }
 

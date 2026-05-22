@@ -148,24 +148,22 @@
     setTimeout(() => { try { cy.resize(); cy.fit(null, 30); } catch (e) {} }, 50);
   }
 
-  // 모바일에서는 본문 내 <graph-ref> ("그래프로 확인해볼게요" 버튼) 바로 다음에
-  // 그래프 패널이 인라인으로 따라오도록 DOM에서 패널을 옮긴다. 데스크탑(≥1024px)에서는
-  // 원래의 grid 3컬럼 sticky 위치를 유지한다.
+  // 모바일(<1024px)에서는 모든 챕터에서 그래프 패널이 본문의 가장 위에 위치하도록
+  // article의 first child로 이동시킨다. 챕터에 graph-ref가 있든 없든 동일 — 챕터
+  // 진입 시 스크롤 0 지점에 그래프가 즉시 보인다.
+  // 데스크탑(≥1024px)은 원래의 grid 3컬럼 sticky 위치를 유지.
   function positionGraphPanel() {
     const panel = document.getElementById('graph-panel');
     const article = document.getElementById('chapter-content');
     const layout = document.querySelector('.layout');
     if (!panel || !article || !layout) return;
     const isMobile = window.matchMedia('(max-width: 1023px)').matches;
-    const graphRefBtn = article.querySelector('.graph-ref-btn');
-    if (isMobile && graphRefBtn) {
-      // graph-ref 버튼 바로 다음에 패널 삽입 (이미 그 위치면 noop)
-      if (graphRefBtn.nextElementSibling !== panel) {
-        graphRefBtn.insertAdjacentElement('afterend', panel);
+    if (isMobile) {
+      if (article.firstElementChild !== panel) {
+        article.insertAdjacentElement('afterbegin', panel);
         if (state.cy) { try { state.cy.resize(); state.cy.fit(null, 30); } catch (e) {} }
       }
     } else {
-      // 데스크탑(또는 모바일이지만 graph-ref가 없는 챕터): layout의 자식으로 복귀
       if (panel.parentElement !== layout) {
         layout.appendChild(panel);
         if (state.cy) { try { state.cy.resize(); state.cy.fit(null, 30); } catch (e) {} }
@@ -177,13 +175,20 @@
     if (!id) return;
     state.currentChapterId = id;
     try { localStorage.setItem('po-last-chapter', id); } catch (e) {}
+    // ChapterRenderer가 article.innerHTML을 통째로 교체하므로, 모바일에서 패널이
+    // article 안에 있던 상태라면 미리 layout으로 옮겨 DOM에서 제거되지 않게 보존한다.
+    const panelEl = document.getElementById('graph-panel');
+    const layoutEl = document.querySelector('.layout');
+    if (panelEl && layoutEl && panelEl.parentElement !== layoutEl) {
+      layoutEl.appendChild(panelEl);
+    }
     // 본문 렌더
     if (window.ChapterRenderer) window.ChapterRenderer.render(id, DATA);
     // 그래프
     loadGraphSlice(id);
     // 실습
     if (window.ExerciseRunner) window.ExerciseRunner.bindExercises(id, DATA);
-    // 모바일 viewport이면 패널을 graph-ref 아래로 옮긴다 (본문 렌더 후 호출)
+    // 모바일 viewport이면 패널을 article 최상단으로 이동 (본문 렌더 후)
     positionGraphPanel();
     // 진도
     if (window.ProgressStore) window.ProgressStore.markVisited(id);
@@ -340,6 +345,10 @@
     if (!startId || !ids.includes(startId)) startId = ids[0] || 'ch01';
     loadChapter(startId);
   }
+
+  // QA/디버그 편의용 — 외부에서 챕터 전환을 직접 호출할 수 있게 노출
+  window.__loadChapter = loadChapter;
+  window.__positionGraphPanel = positionGraphPanel;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
