@@ -148,6 +148,31 @@
     setTimeout(() => { try { cy.resize(); cy.fit(null, 30); } catch (e) {} }, 50);
   }
 
+  // 모바일에서는 본문 내 <graph-ref> ("그래프로 확인해볼게요" 버튼) 바로 다음에
+  // 그래프 패널이 인라인으로 따라오도록 DOM에서 패널을 옮긴다. 데스크탑(≥1024px)에서는
+  // 원래의 grid 3컬럼 sticky 위치를 유지한다.
+  function positionGraphPanel() {
+    const panel = document.getElementById('graph-panel');
+    const article = document.getElementById('chapter-content');
+    const layout = document.querySelector('.layout');
+    if (!panel || !article || !layout) return;
+    const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+    const graphRefBtn = article.querySelector('.graph-ref-btn');
+    if (isMobile && graphRefBtn) {
+      // graph-ref 버튼 바로 다음에 패널 삽입 (이미 그 위치면 noop)
+      if (graphRefBtn.nextElementSibling !== panel) {
+        graphRefBtn.insertAdjacentElement('afterend', panel);
+        if (state.cy) { try { state.cy.resize(); state.cy.fit(null, 30); } catch (e) {} }
+      }
+    } else {
+      // 데스크탑(또는 모바일이지만 graph-ref가 없는 챕터): layout의 자식으로 복귀
+      if (panel.parentElement !== layout) {
+        layout.appendChild(panel);
+        if (state.cy) { try { state.cy.resize(); state.cy.fit(null, 30); } catch (e) {} }
+      }
+    }
+  }
+
   function loadChapter(id) {
     if (!id) return;
     state.currentChapterId = id;
@@ -158,6 +183,8 @@
     loadGraphSlice(id);
     // 실습
     if (window.ExerciseRunner) window.ExerciseRunner.bindExercises(id, DATA);
+    // 모바일 viewport이면 패널을 graph-ref 아래로 옮긴다 (본문 렌더 후 호출)
+    positionGraphPanel();
     // 진도
     if (window.ProgressStore) window.ProgressStore.markVisited(id);
     updateProgress();
@@ -296,6 +323,12 @@
     setupGraphControls();
     setupResetProgress();
     setupExerciseDoneListener();
+    // 창 크기·화면 회전 변화 시 그래프 패널 위치 재계산 (모바일↔데스크탑 전환)
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(positionGraphPanel, 150);
+    });
 
     renderChapterList();
     updateProgress();
