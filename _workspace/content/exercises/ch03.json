@@ -1,0 +1,143 @@
+{
+  "chapterId": "ch03",
+  "exercises": [
+    {
+      "id": "ex-03-01",
+      "type": "quiz",
+      "title": "데이터 속성과 객체 속성의 차이",
+      "prompt": "'데이터 속성'과 '객체 속성'을 가장 잘 설명한 문장을 고르세요.",
+      "init": {
+        "choices": [
+          "데이터 속성은 컴퓨터가 만든 것, 객체 속성은 사람이 만든 것이다.",
+          "데이터 속성은 값(숫자/문자)으로 끝나고, 객체 속성은 다른 인스턴스를 가리킨다.",
+          "데이터 속성은 정수만, 객체 속성은 문자만 다룬다.",
+          "둘은 같은 의미인데 이름만 다르다."
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "'끝나는 자리'에 무엇이 오는지를 비교해 보세요.",
+        "'키 0.4m'와 '진화 → 라이츄'에서 화살표 끝이 어떻게 다른지 떠올려요.",
+        "한쪽은 숫자·문자에서 끝나고, 다른 쪽은 다른 포켓몬을 가리켜요."
+      ],
+      "successMessage": "맞아요! 끝이 '값'이면 데이터 속성, '다른 것을 가리키면' 객체 속성이에요.",
+      "relatedConcepts": ["data-property", "object-property"]
+    },
+    {
+      "id": "ex-03-02",
+      "type": "drag-classify",
+      "title": "피카츄의 정보 카드를 두 박스로",
+      "prompt": "피카츄의 다음 정보들을 '데이터 속성'과 '객체 속성' 박스로 분류하세요.",
+      "init": {
+        "items": [
+          { "id": "height", "label": "키: 0.4m" },
+          { "id": "weight", "label": "몸무게: 6.0kg" },
+          { "id": "hasType", "label": "타입을_가짐 → 전기타입" },
+          { "id": "evolvesTo", "label": "진화함 → 라이츄" },
+          { "id": "hp", "label": "HP: 35" },
+          { "id": "evolvesFrom", "label": "진화_전 → 피츄" },
+          { "id": "speed", "label": "스피드: 90" },
+          { "id": "livesIn", "label": "서식지에_삼 → 숲" }
+        ],
+        "buckets": [
+          { "id": "data", "label": "데이터 속성 (값으로 끝)" },
+          { "id": "object", "label": "객체 속성 (다른 인스턴스를 가리킴)" }
+        ]
+      },
+      "validation": {
+        "kind": "bucket-assignment",
+        "expected": {
+          "height": ["data"],
+          "weight": ["data"],
+          "hasType": ["object"],
+          "evolvesTo": ["object"],
+          "hp": ["data"],
+          "evolvesFrom": ["object"],
+          "speed": ["data"],
+          "livesIn": ["object"]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "오른쪽에 숫자가 있으면 데이터, 다른 이름이 있으면 객체예요.",
+        "'→' 화살표 다음에 오는 것이 '단위 있는 값'인지 '다른 포켓몬/타입/장소'인지 확인하세요.",
+        "데이터 속성 4개(키·몸무게·HP·스피드), 객체 속성 4개(타입·진화함·진화_전·서식지)예요."
+      ],
+      "successMessage": "잘 했어요! 데이터 속성은 '닫힌 값', 객체 속성은 '다른 것으로 향하는 화살표'예요.",
+      "relatedConcepts": ["data-property", "object-property"]
+    },
+    {
+      "id": "ex-03-03",
+      "type": "drag-classify",
+      "title": "이상해씨로 한 번 더 — 8개 속성 분류",
+      "prompt": "이번엔 이상해씨의 정보 8개를 데이터/객체 속성으로 분류하세요.",
+      "init": {
+        "items": [
+          { "id": "height", "label": "키: 0.7m" },
+          { "id": "weight", "label": "몸무게: 6.9kg" },
+          { "id": "hasType-grass", "label": "타입을_가짐 → 풀타입" },
+          { "id": "hasType-poison", "label": "타입을_가짐 → 독타입" },
+          { "id": "evolvesTo", "label": "진화함 → 이상해풀" },
+          { "id": "hasAbility", "label": "특성을_가짐 → 심록" },
+          { "id": "hp", "label": "HP: 45" },
+          { "id": "isLegendary", "label": "전설여부: false" }
+        ],
+        "buckets": [
+          { "id": "data", "label": "데이터 속성" },
+          { "id": "object", "label": "객체 속성" }
+        ]
+      },
+      "validation": {
+        "kind": "bucket-assignment",
+        "expected": {
+          "height": ["data"],
+          "weight": ["data"],
+          "hasType-grass": ["object"],
+          "hasType-poison": ["object"],
+          "evolvesTo": ["object"],
+          "hasAbility": ["object"],
+          "hp": ["data"],
+          "isLegendary": ["data"]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "'전설여부 false'는 boolean(참/거짓) 값이에요. 다른 인스턴스를 가리킬까요?",
+        "특성 '심록'은 또 하나의 정의된 개체(Ability)예요.",
+        "데이터 속성 4개, 객체 속성 4개로 나뉘어요."
+      ],
+      "successMessage": "정확해요! true/false도 '값'이라서 데이터 속성이에요.",
+      "relatedConcepts": ["data-property", "object-property"]
+    },
+    {
+      "id": "ex-03-04",
+      "type": "quiz",
+      "title": "왜 '몸무게'와 '진화함'은 다르게 다뤄지나?",
+      "prompt": "다음 중 '몸무게'와 '진화함'을 다르게 다뤄야 하는 이유로 가장 정확한 것은?",
+      "init": {
+        "choices": [
+          "몸무게는 변하지만 진화는 안 변해서.",
+          "몸무게의 결과는 숫자(독립된 값)지만, 진화함의 결과는 또 하나의 포켓몬(다른 인스턴스)이라서.",
+          "몸무게는 영어로 weight인데 진화는 evolve여서.",
+          "몸무게는 게임에서 쓰지 않고 진화만 게임에서 써서."
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "'결과(목적어)가 무엇인가'에 주목하세요.",
+        "한쪽은 단위가 붙은 측정값, 다른 쪽은 도감에 또 등록된 다른 포켓몬이에요.",
+        "그래서 추론·검색·연결의 방식이 완전히 달라요."
+      ],
+      "successMessage": "맞아요! 객체 속성은 '연결망'을 만들고, 데이터 속성은 '값으로 끝'나요. 다음 챕터에서 이 연결을 본격적으로 다뤄요.",
+      "relatedConcepts": ["data-property", "object-property"]
+    }
+  ]
+}

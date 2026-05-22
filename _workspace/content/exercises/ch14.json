@@ -1,0 +1,125 @@
+{
+  "chapterId": "ch14",
+  "exercises": [
+    {
+      "id": "ex-14-01",
+      "type": "quiz",
+      "title": "상위 온톨로지란?",
+      "prompt": "상위 온톨로지(upper ontology)의 역할로 가장 적절한 것은?",
+      "init": {
+        "choices": [
+          "특정 도메인(예: 의학)에만 적용되는 가장 좁은 분류 체계",
+          "특정 도메인에 묶이지 않고, 모든 분야가 공유하는 최상위 뼈대 온톨로지",
+          "포켓몬 분야에만 적용되는 분류 체계",
+          "트리플의 표기 문법"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "'상위'라는 단어가 힌트예요. 가장 위, 가장 일반적.",
+        "BFO, DOLCE 같은 예가 도메인을 가리지 않는 뼈대를 제공해요.",
+        "도메인 독립적이고 공유 가능한 최상위 분류."
+      ],
+      "successMessage": "맞아요! 상위 온톨로지는 어떤 도메인에서도 가져다 쓸 수 있는 최상위 뼈대예요.",
+      "relatedConcepts": ["upper-ontology"]
+    },
+    {
+      "id": "ex-14-02",
+      "type": "quiz",
+      "title": "온톨로지 재사용의 이점",
+      "prompt": "schema.org, FOAF 같은 공용 어휘를 재사용하는 가장 큰 이유는?",
+      "init": {
+        "choices": [
+          "한국어를 영어로 자동 번역해줘서",
+          "'바퀴를 다시 만들지 않고' 이미 검증된 어휘를 빌려 써서, 다른 시스템과 호환되기 때문",
+          "이미 만들어진 데이터를 무료로 가져올 수 있어서",
+          "재사용은 보안에 좋아서"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "같은 의미를 다른 이름으로 적으면 어떻게 될까요?",
+        "공유 어휘를 쓰면 다른 시스템의 데이터와 자동으로 연결돼요.",
+        "호환성과 재발명 회피."
+      ],
+      "successMessage": "맞아요! 재사용은 표준화와 상호운용성의 핵심이에요.",
+      "relatedConcepts": ["ontology-reuse"]
+    },
+    {
+      "id": "ex-14-03",
+      "type": "graph-build",
+      "title": "포켓몬을 '게임 캐릭터'로 한 단 끌어올리기",
+      "prompt": "기존의 '포켓몬' 클래스 위에 '게임 캐릭터(GameCharacter)' 슈퍼클래스를 만들고, 마인크래프트의 '스티브'와 동물의숲의 '여울이' 인스턴스를 같은 슈퍼클래스에 매다세요.",
+      "init": {
+        "givenNodes": [
+          { "id": "ex:GameCharacter", "label": "게임 캐릭터", "type": "class" },
+          { "id": "poke:Pokemon", "label": "포켓몬", "type": "class" },
+          { "id": "ex:MinecraftCharacter", "label": "마인크래프트 캐릭터", "type": "class" },
+          { "id": "ex:AnimalCrossingCharacter", "label": "동물의숲 캐릭터", "type": "class" },
+          { "id": "ex:steve", "label": "스티브", "type": "instance" },
+          { "id": "ex:yeoul", "label": "여울이", "type": "instance" },
+          { "id": "poke:pokemon-25", "label": "피카츄", "type": "instance" }
+        ],
+        "givenEdges": [],
+        "palette": {
+          "edges": [
+            { "label": "subClassOf", "kind": "is-a" },
+            { "label": "type", "kind": "is-a" }
+          ]
+        }
+      },
+      "validation": {
+        "kind": "graph-isomorphism",
+        "expected": {
+          "edges": [
+            { "from": "poke:Pokemon", "to": "ex:GameCharacter", "label": "subClassOf" },
+            { "from": "ex:MinecraftCharacter", "to": "ex:GameCharacter", "label": "subClassOf" },
+            { "from": "ex:AnimalCrossingCharacter", "to": "ex:GameCharacter", "label": "subClassOf" },
+            { "from": "ex:steve", "to": "ex:MinecraftCharacter", "label": "type" },
+            { "from": "ex:yeoul", "to": "ex:AnimalCrossingCharacter", "label": "type" },
+            { "from": "poke:pokemon-25", "to": "poke:Pokemon", "label": "type" }
+          ]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "필요한 엣지는 총 6개: subClassOf 3개, type 3개.",
+        "포켓몬·마인크래프트·동물의숲 캐릭터 클래스 모두 'GameCharacter'의 subClass.",
+        "각 인스턴스는 자기 게임 클래스의 type."
+      ],
+      "successMessage": "훌륭해요! 포켓몬 온톨로지가 더 큰 '게임 캐릭터' 우주의 일부로 자리잡았어요. 이게 상위 온톨로지의 힘이에요.",
+      "relatedConcepts": ["upper-ontology", "ontology-reuse", "subclass"]
+    },
+    {
+      "id": "ex-14-04",
+      "type": "triple-build",
+      "title": "나만의 미니 온톨로지 — 첫 트리플",
+      "prompt": "이제 당신의 차례예요. 좋아하는 음악 장르 온톨로지를 만든다고 가정해요. 'BTS는 K-POP 그룹의 인스턴스다'를 트리플로 만들어 보세요.",
+      "init": {
+        "subjects": ["ex:BTS", "ex:KPopGroup", "ex:Music", "ex:Idol"],
+        "predicates": ["rdf:type", "rdfs:subClassOf", "ex:hasGenre"],
+        "objects": ["ex:KPopGroup", "ex:BTS", "ex:Music", "ex:Idol"]
+      },
+      "validation": {
+        "kind": "exact-match",
+        "expected": ["ex:BTS", "rdf:type", "ex:KPopGroup"],
+        "partialCredit": false
+      },
+      "hints": [
+        "BTS는 한 그룹(개체)이고, K-POP 그룹은 묶음(클래스)이에요.",
+        "인스턴스 → 클래스는 rdf:type으로 적어요.",
+        "ex:BTS rdf:type ex:KPopGroup."
+      ],
+      "successMessage": "축하해요! 포켓몬 14챕터를 거쳐 이제 자신의 영역으로 온톨로지를 확장하기 시작했어요.",
+      "relatedConcepts": ["ontology-reuse", "class", "instance", "triple"]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "chapterId": "ch02",
+  "exercises": [
+    {
+      "id": "ex-02-01",
+      "type": "quiz",
+      "title": "클래스 vs 인스턴스",
+      "prompt": "친구가 '내 피카츄 이름은 번개야'라고 했어요. 여기서 '피카츄(라는 종)'와 '번개(라는 친구의 개체)' 중 '클래스'는 무엇일까요?",
+      "init": {
+        "choices": [
+          "'번개'가 클래스다",
+          "'피카츄(종)'가 클래스다",
+          "둘 다 클래스다",
+          "둘 다 인스턴스다"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "클래스는 '여러 개체의 묶음'을 가리키는 종류예요.",
+        "'피카츄'라는 종에는 수많은 개체가 속할 수 있어요. '번개'는 그 중 한 마리.",
+        "묶음 = 클래스, 묶음 안의 하나 = 인스턴스."
+      ],
+      "successMessage": "맞아요! '피카츄'는 클래스, '번개'는 그 클래스의 인스턴스예요.",
+      "relatedConcepts": ["class", "instance"]
+    },
+    {
+      "id": "ex-02-02",
+      "type": "drag-classify",
+      "title": "카드를 클래스 박스와 인스턴스 박스로",
+      "prompt": "다음 카드들을 '클래스(종류)'와 '인스턴스(개체)' 박스로 나눠 보세요.",
+      "init": {
+        "items": [
+          { "id": "Pokemon", "label": "포켓몬(전체)" },
+          { "id": "ElectricType", "label": "전기타입(타입 종류)" },
+          { "id": "Pikachu-species", "label": "피카츄(종)" },
+          { "id": "lightning-instance", "label": "내 피카츄 '번개'" },
+          { "id": "raichu-instance", "label": "친구의 라이츄 '꼬마'" },
+          { "id": "Eevee-species", "label": "이브이(종)" }
+        ],
+        "buckets": [
+          { "id": "class", "label": "클래스 (종류/묶음)" },
+          { "id": "instance", "label": "인스턴스 (개체/한 마리)" }
+        ]
+      },
+      "validation": {
+        "kind": "bucket-assignment",
+        "expected": {
+          "Pokemon": ["class"],
+          "ElectricType": ["class"],
+          "Pikachu-species": ["class"],
+          "lightning-instance": ["instance"],
+          "raichu-instance": ["instance"],
+          "Eevee-species": ["class"]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "'-종'이라고 적혀 있으면 묶음이라는 뜻이에요.",
+        "이름을 가진 한 마리(예: '번개')는 인스턴스예요.",
+        "클래스 4개, 인스턴스 2개예요."
+      ],
+      "successMessage": "잘 했어요! 클래스는 '틀', 인스턴스는 '그 틀에 부어 만든 하나'예요.",
+      "relatedConcepts": ["class", "instance", "is-a"]
+    },
+    {
+      "id": "ex-02-03",
+      "type": "matching",
+      "title": "인스턴스와 클래스 짝짓기 (is-a)",
+      "prompt": "각 인스턴스(왼쪽)가 속하는 클래스(오른쪽)를 짝지어 보세요. '~은 ~이다(is-a)' 관계예요.",
+      "init": {
+        "left": [
+          { "id": "poke:pokemon-25", "label": "피카츄" },
+          { "id": "poke:pokemon-26", "label": "라이츄" },
+          { "id": "poke:pokemon-172", "label": "피츄" },
+          { "id": "poke:pokemon-133", "label": "이브이" }
+        ],
+        "right": [
+          { "id": "poke:ElectricTypePokemon", "label": "전기타입 포켓몬" },
+          { "id": "poke:NormalTypePokemon", "label": "노말타입 포켓몬" }
+        ]
+      },
+      "validation": {
+        "kind": "matching-pairs",
+        "expected": {
+          "poke:pokemon-25": "poke:ElectricTypePokemon",
+          "poke:pokemon-26": "poke:ElectricTypePokemon",
+          "poke:pokemon-172": "poke:ElectricTypePokemon",
+          "poke:pokemon-133": "poke:NormalTypePokemon"
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "각 포켓몬의 타입을 떠올려 보세요.",
+        "피카츄·라이츄·피츄는 모두 같은 타입이에요(노란 친구들).",
+        "이브이만 다른 클래스에 속해요."
+      ],
+      "successMessage": "정확해요! 여러 인스턴스가 하나의 클래스에 동시에 속할 수 있어요.",
+      "relatedConcepts": ["class", "instance", "is-a"]
+    },
+    {
+      "id": "ex-02-04",
+      "type": "quiz",
+      "title": "'피카츄'는 클래스인가, 인스턴스인가?",
+      "prompt": "'피카츄'라는 단어가 클래스로도 쓰이고 인스턴스로도 쓰일 수 있다고 했어요. 왜 그럴까요? 가장 적절한 설명을 고르세요.",
+      "init": {
+        "choices": [
+          "그건 잘못된 설명이에요. 피카츄는 항상 인스턴스예요.",
+          "'피카츄(종)'으로 보면 클래스, '내 피카츄 한 마리'로 보면 그 클래스의 인스턴스이기 때문이에요.",
+          "피카츄는 진화가 가능해서 두 가지 모습을 가지기 때문이에요.",
+          "한국어로는 둘이 똑같은 단어라서 그렇고, 영어로는 다르게 써요."
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "같은 단어가 '종' 의미와 '한 마리' 의미를 동시에 가질 수 있어요.",
+        "'카레'라는 단어도 '메뉴 종류'와 '오늘 점심에 먹은 그 카레' 둘 다 가리킬 수 있죠.",
+        "관점에 따라 클래스도 되고 인스턴스도 된다는 뜻이에요."
+      ],
+      "successMessage": "맞아요! 같은 이름이라도 '종' 관점이냐 '한 마리' 관점이냐에 따라 위치가 달라져요.",
+      "relatedConcepts": ["class", "instance"]
+    }
+  ]
+}

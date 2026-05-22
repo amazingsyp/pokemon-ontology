@@ -1,0 +1,147 @@
+{
+  "chapterId": "ch05",
+  "exercises": [
+    {
+      "id": "ex-05-01",
+      "type": "quiz",
+      "title": "is-a와 instance-of의 차이",
+      "prompt": "다음 두 관계 중 '클래스끼리'의 관계는 무엇일까요?",
+      "init": {
+        "choices": [
+          "'피카츄(종) is-a 전기타입 포켓몬' (클래스-클래스, subClassOf)",
+          "'내 피카츄 번개 is-a 피카츄(종)' (인스턴스-클래스, type)",
+          "둘 다 클래스-클래스",
+          "둘 다 인스턴스-클래스"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [0],
+        "partialCredit": false
+      },
+      "hints": [
+        "왼쪽이 종(묶음)인지, 한 마리(개체)인지 확인하세요.",
+        "subClassOf는 클래스 둘을 잇고, type은 개체→클래스를 잇는 관계예요.",
+        "'종-종' 관계와 '개체-종' 관계를 구별하는 거예요."
+      ],
+      "successMessage": "맞아요! 같은 'is-a'라도 클래스끼리면 subClassOf, 개체→클래스면 type이에요.",
+      "relatedConcepts": ["subclass", "superclass", "is-a"]
+    },
+    {
+      "id": "ex-05-02",
+      "type": "drag-classify",
+      "title": "각 포켓몬을 가장 정확한 클래스에 배치",
+      "prompt": "다음 포켓몬들을 '전기타입 포켓몬', '드래곤타입 포켓몬', '비행타입 포켓몬' 박스에 넣어 보세요. 둘 이상에 속할 수도 있어요(다음 챕터 미리보기).",
+      "init": {
+        "items": [
+          { "id": "poke:pokemon-25", "label": "피카츄" },
+          { "id": "poke:pokemon-135", "label": "쥬피썬더" },
+          { "id": "poke:pokemon-147", "label": "미뇽" },
+          { "id": "poke:pokemon-148", "label": "신뇽" },
+          { "id": "poke:pokemon-149", "label": "망나뇽" }
+        ],
+        "buckets": [
+          { "id": "poke:ElectricTypePokemon", "label": "전기타입 포켓몬" },
+          { "id": "poke:DragonTypePokemon", "label": "드래곤타입 포켓몬" },
+          { "id": "poke:FlyingTypePokemon", "label": "비행타입 포켓몬" }
+        ]
+      },
+      "validation": {
+        "kind": "bucket-assignment",
+        "expected": {
+          "poke:pokemon-25": ["poke:ElectricTypePokemon"],
+          "poke:pokemon-135": ["poke:ElectricTypePokemon"],
+          "poke:pokemon-147": ["poke:DragonTypePokemon"],
+          "poke:pokemon-148": ["poke:DragonTypePokemon"],
+          "poke:pokemon-149": ["poke:DragonTypePokemon", "poke:FlyingTypePokemon"]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "각 포켓몬이 가진 '타입'을 떠올려 보세요.",
+        "미뇽·신뇽은 순수 드래곤, 망나뇽은 드래곤+비행이에요.",
+        "망나뇽만 두 박스에 동시에 들어가요."
+      ],
+      "successMessage": "잘 했어요! 망나뇽처럼 두 박스에 동시에 들어가는 게 다음 챕터의 주제예요.",
+      "relatedConcepts": ["subclass", "is-a", "multiple-inheritance"]
+    },
+    {
+      "id": "ex-05-03",
+      "type": "graph-build",
+      "title": "드래곤 진화 계층 + 클래스 트리 만들기",
+      "prompt": "미뇽 → 신뇽 → 망나뇽 진화 사슬을 그리고, 세 인스턴스를 '드래곤타입 포켓몬' 클래스에 연결하세요. 그리고 '드래곤타입 포켓몬'을 '포켓몬'의 서브클래스로 잇습니다.",
+      "init": {
+        "givenNodes": [
+          { "id": "poke:Pokemon", "label": "포켓몬", "type": "class" },
+          { "id": "poke:DragonTypePokemon", "label": "드래곤타입 포켓몬", "type": "class" },
+          { "id": "poke:pokemon-147", "label": "미뇽", "type": "instance" },
+          { "id": "poke:pokemon-148", "label": "신뇽", "type": "instance" },
+          { "id": "poke:pokemon-149", "label": "망나뇽", "type": "instance" }
+        ],
+        "givenEdges": [],
+        "palette": {
+          "edges": [
+            { "label": "subClassOf (서브클래스)", "kind": "is-a" },
+            { "label": "type (인스턴스)", "kind": "is-a" },
+            { "label": "evolvesTo (진화함)", "kind": "object" }
+          ]
+        }
+      },
+      "validation": {
+        "kind": "graph-isomorphism",
+        "expected": {
+          "edges": [
+            { "from": "poke:DragonTypePokemon", "to": "poke:Pokemon", "label": "subClassOf (서브클래스)" },
+            { "from": "poke:pokemon-147", "to": "poke:DragonTypePokemon", "label": "type (인스턴스)" },
+            { "from": "poke:pokemon-148", "to": "poke:DragonTypePokemon", "label": "type (인스턴스)" },
+            { "from": "poke:pokemon-149", "to": "poke:DragonTypePokemon", "label": "type (인스턴스)" },
+            { "from": "poke:pokemon-147", "to": "poke:pokemon-148", "label": "evolvesTo (진화함)" },
+            { "from": "poke:pokemon-148", "to": "poke:pokemon-149", "label": "evolvesTo (진화함)" }
+          ]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "엣지가 총 6개 필요해요: subClassOf 1개, type 3개, evolvesTo 2개.",
+        "subClassOf는 클래스끼리, type은 인스턴스→클래스, evolvesTo는 인스턴스 사이예요.",
+        "드래곤타입 포켓몬 → 포켓몬 (subClassOf), 세 마리 → 드래곤타입 포켓몬 (type), 미뇽→신뇽→망나뇽 (evolvesTo)."
+      ],
+      "successMessage": "훌륭해요! 계층(클래스 트리)과 진화 사슬(인스턴스 사이의 관계)이 한 그림에 어우러졌어요.",
+      "relatedConcepts": ["subclass", "superclass", "inheritance", "is-a"]
+    },
+    {
+      "id": "ex-05-04",
+      "type": "reasoning-sim",
+      "title": "상속이 만드는 사실",
+      "prompt": "다음 트리플과 규칙이 있을 때, 새로 도출되는 트리플은 무엇일까요?",
+      "init": {
+        "givenTriples": [
+          ["poke:pokemon-25", "rdf:type", "poke:ElectricTypePokemon"],
+          ["poke:ElectricTypePokemon", "rdfs:subClassOf", "poke:Pokemon"]
+        ],
+        "rule": {
+          "if": [["?x", "rdf:type", "?A"], ["?A", "rdfs:subClassOf", "?B"]],
+          "then": [["?x", "rdf:type", "?B"]]
+        },
+        "candidateAnswers": [
+          ["poke:pokemon-25", "rdf:type", "poke:Pokemon"],
+          ["poke:Pokemon", "rdf:type", "poke:pokemon-25"],
+          ["poke:ElectricTypePokemon", "rdf:type", "poke:Pokemon"],
+          ["poke:pokemon-25", "rdfs:subClassOf", "poke:Pokemon"]
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [0],
+        "partialCredit": false
+      },
+      "hints": [
+        "?x에 무엇이 들어가고, ?A와 ?B에 무엇이 들어가는지 매칭해 보세요.",
+        "?x=pokemon-25, ?A=ElectricTypePokemon, ?B=Pokemon로 바인딩돼요.",
+        "결과는 '피카츄 rdf:type 포켓몬'이에요 — 상속으로 자동 도출!"
+      ],
+      "successMessage": "정답! 서브클래스 규칙으로 '피카츄는 포켓몬이다'가 자동으로 따라와요. 이게 바로 상속이에요.",
+      "relatedConcepts": ["inheritance", "subclass"]
+    }
+  ]
+}

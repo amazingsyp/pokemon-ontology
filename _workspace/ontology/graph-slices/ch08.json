@@ -1,0 +1,139 @@
+{
+  "id": "ch08",
+  "title": "역관계와 대칭성",
+  "nodes": [
+    {
+      "id": "poke:pokemon-172",
+      "label": "피츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-25",
+      "label": "피카츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-26",
+      "label": "라이츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-133",
+      "label": "이브이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-196",
+      "label": "에브이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-134",
+      "label": "샤미드",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-135",
+      "label": "쥬피썬더",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-136",
+      "label": "부스터",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-471",
+      "label": "글레이시아",
+      "type": "instance"
+    },
+    {
+      "id": "poke:evolvesTo",
+      "label": "진화함",
+      "type": "class"
+    },
+    {
+      "id": "poke:evolvesFrom",
+      "label": "진화_전(역관계)",
+      "type": "class"
+    },
+    {
+      "id": "poke:evolvesToEventually",
+      "label": "결국_진화함(전이)",
+      "type": "class"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:evolvesTo",
+      "target": "poke:evolvesFrom",
+      "label": "inverseOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-172",
+      "target": "poke:pokemon-25",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:pokemon-26",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:pokemon-172",
+      "label": "evolvesFrom",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-26",
+      "target": "poke:pokemon-25",
+      "label": "evolvesFrom",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-172",
+      "target": "poke:pokemon-26",
+      "label": "evolvesToEventually",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-134",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-135",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-136",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-196",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-471",
+      "label": "evolvesTo",
+      "kind": "object"
+    }
+  ],
+  "highlight": [
+    "poke:evolvesTo",
+    "poke:pokemon-25"
+  ],
+  "layoutHint": "dagre"
+}

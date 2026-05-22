@@ -1,0 +1,168 @@
+{
+  "chapterId": "ch13",
+  "exercises": [
+    {
+      "id": "ex-13-01",
+      "type": "quiz",
+      "title": "명시 사실과 도출 사실",
+      "prompt": "'사람이 직접 적은 사실'과 '규칙을 적용해 자동으로 따라온 사실'을 각각 뭐라고 부를까요?",
+      "init": {
+        "choices": [
+          "둘 다 명시(asserted) 사실",
+          "직접 적은 것은 도출(inferred), 자동은 명시(asserted)",
+          "직접 적은 것은 명시(asserted), 자동은 도출(inferred)",
+          "둘 다 도출(inferred) 사실"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [2],
+        "partialCredit": false
+      },
+      "hints": [
+        "'asserted'는 '주장된, 명시된'이라는 뜻이에요.",
+        "사람이 키보드로 친 게 명시, 컴퓨터가 규칙으로 만든 게 도출.",
+        "세 번째 선택지가 맞아요."
+      ],
+      "successMessage": "맞아요! 명시 = 사람이 적음, 도출 = 규칙으로 자동.",
+      "relatedConcepts": ["asserted-vs-inferred", "reasoning"]
+    },
+    {
+      "id": "ex-13-02",
+      "type": "reasoning-sim",
+      "title": "역관계 규칙 한 번 적용",
+      "prompt": "이브이의 진화 트리플 1개와 역관계 규칙이 있어요. 도출되는 트리플 한 줄을 고르세요.",
+      "init": {
+        "givenTriples": [
+          ["poke:pokemon-133", "poke:evolvesTo", "poke:pokemon-196"]
+        ],
+        "rule": {
+          "if": [["?a", "poke:evolvesTo", "?b"]],
+          "then": [["?b", "poke:evolvesFrom", "?a"]]
+        },
+        "candidateAnswers": [
+          ["poke:pokemon-196", "poke:evolvesFrom", "poke:pokemon-133"],
+          ["poke:pokemon-133", "poke:evolvesFrom", "poke:pokemon-196"],
+          ["poke:pokemon-196", "poke:evolvesTo", "poke:pokemon-133"],
+          ["poke:pokemon-133", "poke:evolvesToEventually", "poke:pokemon-196"]
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [0],
+        "partialCredit": false
+      },
+      "hints": [
+        "?a=이브이(133), ?b=에브이(196)로 바인딩돼요.",
+        "그러면 결론은 'B evolvesFrom A' 형태예요.",
+        "에브이 evolvesFrom 이브이."
+      ],
+      "successMessage": "정답! 한 번의 적용으로 새 트리플이 만들어졌어요.",
+      "relatedConcepts": ["reasoning", "inverse-property", "inference-rule"]
+    },
+    {
+      "id": "ex-13-03",
+      "type": "reasoning-sim",
+      "title": "이브이 8형제 — 도출 트리플 모두 고르기",
+      "prompt": "이브이→{샤미드, 쥬피썬더, 부스터, 에브이, 블래키, 리피아, 글레이시아} 7개 트리플과 역관계 규칙이 있어요. 도출되는 트리플 중 옳은 것을 모두 고르세요.",
+      "init": {
+        "givenTriples": [
+          ["poke:pokemon-133", "poke:evolvesTo", "poke:pokemon-134"],
+          ["poke:pokemon-133", "poke:evolvesTo", "poke:pokemon-135"],
+          ["poke:pokemon-133", "poke:evolvesTo", "poke:pokemon-136"],
+          ["poke:pokemon-133", "poke:evolvesTo", "poke:pokemon-196"],
+          ["poke:pokemon-133", "poke:evolvesTo", "poke:pokemon-197"],
+          ["poke:pokemon-133", "poke:evolvesTo", "poke:pokemon-470"],
+          ["poke:pokemon-133", "poke:evolvesTo", "poke:pokemon-471"]
+        ],
+        "rule": {
+          "if": [["?a", "poke:evolvesTo", "?b"]],
+          "then": [["?b", "poke:evolvesFrom", "?a"]]
+        },
+        "candidateAnswers": [
+          ["poke:pokemon-134", "poke:evolvesFrom", "poke:pokemon-133"],
+          ["poke:pokemon-135", "poke:evolvesFrom", "poke:pokemon-133"],
+          ["poke:pokemon-471", "poke:evolvesFrom", "poke:pokemon-133"],
+          ["poke:pokemon-133", "poke:evolvesFrom", "poke:pokemon-134"],
+          ["poke:pokemon-196", "poke:evolvesTo", "poke:pokemon-133"]
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [0, 1, 2],
+        "partialCredit": true
+      },
+      "hints": [
+        "역관계 규칙을 각 입력 트리플에 한 번씩 적용해 보세요.",
+        "결과는 항상 '진화형 evolvesFrom 이브이' 형태가 돼요.",
+        "정답은 3개. 마지막 두 선택지는 방향이 거꾸로(이브이가 134에서 진화하는 게 아님)."
+      ],
+      "successMessage": "잘 했어요! 사람이 적은 7개에서 7개가 자동 추가 — 데이터 양이 2배가 됐죠.",
+      "relatedConcepts": ["reasoning", "inverse-property"]
+    },
+    {
+      "id": "ex-13-04",
+      "type": "reasoning-sim",
+      "title": "전이 + 분류 규칙 연쇄 적용",
+      "prompt": "다음 데이터와 두 규칙이 있어요. 두 규칙을 순서대로 적용하면 어떤 트리플이 새로 도출될까요? (모두 고르세요)",
+      "init": {
+        "givenTriples": [
+          ["poke:pokemon-172", "poke:evolvesTo", "poke:pokemon-25"],
+          ["poke:pokemon-25", "poke:evolvesTo", "poke:pokemon-26"],
+          ["poke:pokemon-25", "rdf:type", "poke:Pokemon"],
+          ["poke:pokemon-25", "poke:hasType", "poke:ElectricType"]
+        ],
+        "rule": {
+          "if": [
+            ["?a", "poke:evolvesTo", "?b"],
+            ["?b", "poke:evolvesTo", "?c"]
+          ],
+          "then": [["?a", "poke:evolvesToEventually", "?c"]]
+        },
+        "candidateAnswers": [
+          ["poke:pokemon-172", "poke:evolvesToEventually", "poke:pokemon-26"],
+          ["poke:pokemon-25", "rdf:type", "poke:ElectricTypePokemon"],
+          ["poke:pokemon-26", "poke:evolvesToEventually", "poke:pokemon-172"],
+          ["poke:pokemon-26", "poke:evolvesTo", "poke:pokemon-25"]
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [0],
+        "partialCredit": false
+      },
+      "hints": [
+        "보여준 규칙은 '전이 규칙'(evolvesTo의 연쇄)이에요.",
+        "?a=피츄, ?b=피카츄, ?c=라이츄로 바인딩.",
+        "결과는 '피츄 evolvesToEventually 라이츄' 한 줄."
+      ],
+      "successMessage": "맞아요! 전이 규칙으로 피츄가 결국 라이츄까지 도달함을 자동 추론.",
+      "relatedConcepts": ["reasoning", "transitive-property", "inference-rule"]
+    },
+    {
+      "id": "ex-13-05",
+      "type": "query-build",
+      "title": "추론 결과까지 포함한 SPARQL 쿼리",
+      "prompt": "추론 엔진이 evolvesFrom을 채워준 뒤, '이브이로부터 진화한 모든 포켓몬'을 찾는 쿼리를 만드세요.",
+      "init": {
+        "queryShape": "SELECT ?evolution WHERE { ?evolution ?prop ?subj }",
+        "options": {
+          "?prop": ["poke:evolvesFrom", "poke:evolvesTo", "poke:hasType"],
+          "?subj": ["poke:pokemon-133", "poke:pokemon-25", "poke:pokemon-172"]
+        }
+      },
+      "validation": {
+        "kind": "query-match",
+        "expected": { "?prop": "poke:evolvesFrom", "?subj": "poke:pokemon-133" },
+        "partialCredit": false
+      },
+      "hints": [
+        "'이브이로부터 진화한' = '진화 전이 이브이'.",
+        "evolvesFrom 속성과 이브이(pokemon-133) 사용.",
+        "?prop=poke:evolvesFrom, ?subj=poke:pokemon-133."
+      ],
+      "successMessage": "정답! 명시 데이터에는 evolvesFrom이 없었는데, 추론으로 채워져서 8형제가 결과로 나와요.",
+      "relatedConcepts": ["reasoning", "asserted-vs-inferred", "sparql"]
+    }
+  ]
+}

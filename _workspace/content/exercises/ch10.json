@@ -1,0 +1,106 @@
+{
+  "chapterId": "ch10",
+  "exercises": [
+    {
+      "id": "ex-10-01",
+      "type": "quiz",
+      "title": "SELECT와 WHERE의 역할",
+      "prompt": "SPARQL의 SELECT와 WHERE 절의 역할을 가장 잘 설명한 것은?",
+      "init": {
+        "choices": [
+          "SELECT는 트리플을 추가하고, WHERE는 트리플을 지운다",
+          "SELECT는 '뭘 보여줄지', WHERE는 '어떤 조건의 트리플을 찾을지'",
+          "SELECT는 SQL용, WHERE는 SPARQL용",
+          "둘 다 같은 역할인데 이름만 다르다"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "엑셀로 치면 어떤 부분이 '필터 조건'이고 어떤 부분이 '결과 컬럼'일까요?",
+        "SELECT 다음에는 보여줄 '변수', WHERE 다음에는 매칭할 '패턴'이 와요.",
+        "결과 결정 = SELECT, 매칭 조건 = WHERE."
+      ],
+      "successMessage": "맞아요! 결과 컬럼은 SELECT, 매칭 조건은 WHERE.",
+      "relatedConcepts": ["sparql", "select-where"]
+    },
+    {
+      "id": "ex-10-02",
+      "type": "query-build",
+      "title": "모든 전기 타입 포켓몬 찾기",
+      "prompt": "'전기 타입을 가진 모든 포켓몬'을 찾는 쿼리를 만들어 보세요. SELECT ?p WHERE { ?p ?prop ?obj } 형태의 비주얼 빌더로, ?prop과 ?obj를 적절히 골라주세요.",
+      "init": {
+        "queryShape": "SELECT ?p WHERE { ?p ?prop ?obj }",
+        "options": {
+          "?prop": ["poke:hasType", "poke:evolvesTo", "poke:height", "rdf:type"],
+          "?obj": ["poke:ElectricType", "poke:FireType", "poke:WaterType", "poke:Pokemon"]
+        }
+      },
+      "validation": {
+        "kind": "query-match",
+        "expected": { "?prop": "poke:hasType", "?obj": "poke:ElectricType" },
+        "partialCredit": false
+      },
+      "hints": [
+        "'전기 타입을 가진다'는 어떤 속성으로 표현될까요?",
+        "hasType 속성과 ElectricType 클래스를 사용해요.",
+        "?prop=poke:hasType, ?obj=poke:ElectricType."
+      ],
+      "successMessage": "정답! 이 쿼리를 돌리면 피카츄·라이츄·피츄·쥬피썬더 등이 결과로 나와요.",
+      "relatedConcepts": ["sparql", "select-where", "query-variable"]
+    },
+    {
+      "id": "ex-10-03",
+      "type": "query-build",
+      "title": "1세대 포켓몬 찾기",
+      "prompt": "'1세대(gen-1)에 속한 모든 포켓몬'을 찾는 쿼리를 만드세요.",
+      "init": {
+        "queryShape": "SELECT ?p WHERE { ?p ?prop ?obj }",
+        "options": {
+          "?prop": ["poke:fromGeneration", "poke:hasType", "poke:evolvesTo"],
+          "?obj": ["poke:gen-1", "poke:gen-2", "poke:gen-3", "poke:Pokemon"]
+        }
+      },
+      "validation": {
+        "kind": "query-match",
+        "expected": { "?prop": "poke:fromGeneration", "?obj": "poke:gen-1" },
+        "partialCredit": false
+      },
+      "hints": [
+        "'~ 세대에 속한다'는 어떤 속성으로 적혀 있을까요?",
+        "스키마에서 fromGeneration 속성을 찾아 보세요.",
+        "?prop=poke:fromGeneration, ?obj=poke:gen-1."
+      ],
+      "successMessage": "정답! 1세대 포켓몬 151마리(원본 도감)가 결과로 나올 거예요.",
+      "relatedConcepts": ["sparql", "query-variable"]
+    },
+    {
+      "id": "ex-10-04",
+      "type": "query-build",
+      "title": "피카츄가 진화하는 포켓몬 찾기",
+      "prompt": "'피카츄가 진화하는 포켓몬'을 한 마리 찾는 쿼리를 만드세요. 이번엔 주어 자리가 고정이에요.",
+      "init": {
+        "queryShape": "SELECT ?p WHERE { ?subj ?prop ?p }",
+        "options": {
+          "?subj": ["poke:pokemon-25", "poke:pokemon-26", "poke:pokemon-172", "poke:pokemon-133"],
+          "?prop": ["poke:evolvesTo", "poke:evolvesFrom", "poke:hasType"]
+        }
+      },
+      "validation": {
+        "kind": "query-match",
+        "expected": { "?subj": "poke:pokemon-25", "?prop": "poke:evolvesTo" },
+        "partialCredit": false
+      },
+      "hints": [
+        "주어=피카츄(pokemon-25)부터 시작해요.",
+        "'진화하는 대상'은 evolvesTo 속성으로 찾아요.",
+        "?subj=poke:pokemon-25, ?prop=poke:evolvesTo. 결과는 라이츄."
+      ],
+      "successMessage": "정확! 결과는 poke:pokemon-26 (라이츄) 한 마리예요.",
+      "relatedConcepts": ["sparql", "query-variable"]
+    }
+  ]
+}

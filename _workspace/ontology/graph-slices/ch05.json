@@ -1,0 +1,152 @@
+{
+  "id": "ch05",
+  "title": "계층과 상속(is-a)",
+  "nodes": [
+    {
+      "id": "poke:Pokemon",
+      "label": "포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:ElectricTypePokemon",
+      "label": "전기타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:DragonTypePokemon",
+      "label": "드래곤타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:FlyingTypePokemon",
+      "label": "비행타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:LegendaryPokemon",
+      "label": "전설의 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:pokemon-25",
+      "label": "피카츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-135",
+      "label": "쥬피썬더",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-147",
+      "label": "미뇽",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-148",
+      "label": "신뇽",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-149",
+      "label": "망나뇽",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-145",
+      "label": "썬더",
+      "type": "instance"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:ElectricTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:DragonTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:FlyingTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:LegendaryPokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:ElectricTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-135",
+      "target": "poke:ElectricTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-147",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-148",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-149",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-149",
+      "target": "poke:FlyingTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-145",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-145",
+      "target": "poke:ElectricTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-147",
+      "target": "poke:pokemon-148",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-148",
+      "target": "poke:pokemon-149",
+      "label": "evolvesTo",
+      "kind": "object"
+    }
+  ],
+  "highlight": [
+    "poke:Pokemon",
+    "poke:DragonTypePokemon"
+  ],
+  "layoutHint": "dagre"
+}

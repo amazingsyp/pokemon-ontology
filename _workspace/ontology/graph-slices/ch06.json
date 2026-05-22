@@ -1,0 +1,221 @@
+{
+  "id": "ch06",
+  "title": "분류와 다중 상속",
+  "nodes": [
+    {
+      "id": "poke:Pokemon",
+      "label": "포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:FireTypePokemon",
+      "label": "불꽃타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:FlyingTypePokemon",
+      "label": "비행타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:GrassTypePokemon",
+      "label": "풀타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:PoisonTypePokemon",
+      "label": "독타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:WaterTypePokemon",
+      "label": "물타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:IceTypePokemon",
+      "label": "얼음타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:GhostTypePokemon",
+      "label": "고스트타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:DualTypePokemon",
+      "label": "듀얼 타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:pokemon-6",
+      "label": "리자몽",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1",
+      "label": "이상해씨",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-130",
+      "label": "갸라도스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-131",
+      "label": "라프라스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-94",
+      "label": "팬텀",
+      "type": "instance"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:FireTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:FlyingTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:GrassTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:PoisonTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:WaterTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:IceTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:GhostTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:DualTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-6",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-6",
+      "target": "poke:FlyingTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-6",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:PoisonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-130",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-130",
+      "target": "poke:FlyingTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-130",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-131",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-131",
+      "target": "poke:IceTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-131",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-94",
+      "target": "poke:GhostTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-94",
+      "target": "poke:PoisonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-94",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    }
+  ],
+  "highlight": [
+    "poke:pokemon-6",
+    "poke:DualTypePokemon"
+  ],
+  "layoutHint": "cose"
+}

@@ -1,0 +1,109 @@
+{
+  "chapterId": "ch01",
+  "exercises": [
+    {
+      "id": "ex-01-01",
+      "type": "quiz",
+      "title": "온톨로지 한 줄 정의",
+      "prompt": "다음 중 '온톨로지'를 가장 잘 설명한 문장을 고르세요.",
+      "init": {
+        "choices": [
+          "포켓몬의 한자 이름을 모은 사전",
+          "어떤 영역에 존재하는 것들이 어떤 종류로 나뉘고 서로 어떻게 관련되는지를 정리한 지도",
+          "포켓몬 게임을 더 잘 하기 위한 공략집",
+          "포켓몬을 잡는 방법을 설명한 가이드북"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "포켓몬에만 해당되는 것은 아니에요. 더 일반적인 개념이에요.",
+        "온톨로지는 '존재하는 것들'을 어떻게 다루는지에 관한 거예요.",
+        "'종류'와 '관계'라는 두 단어가 들어간 선택지를 찾아보세요."
+      ],
+      "successMessage": "맞아요! 온톨로지는 '세상의 묶음과 관계를 적은 지도'예요.",
+      "relatedConcepts": ["ontology"]
+    },
+    {
+      "id": "ex-01-02",
+      "type": "drag-classify",
+      "title": "포켓몬 5마리를 타입으로 묶어보기",
+      "prompt": "피카츄, 파이리, 꼬부기, 이상해씨, 메타몽을 타입별 박스에 넣어 보세요. 메타몽은 '노말' 박스로 보내면 돼요.",
+      "init": {
+        "items": [
+          { "id": "poke:pokemon-25", "label": "피카츄" },
+          { "id": "poke:pokemon-4", "label": "파이리" },
+          { "id": "poke:pokemon-7", "label": "꼬부기" },
+          { "id": "poke:pokemon-1", "label": "이상해씨" },
+          { "id": "poke:pokemon-133", "label": "메타몽 자리(이브이)" }
+        ],
+        "buckets": [
+          { "id": "전기", "label": "전기 타입" },
+          { "id": "불꽃", "label": "불꽃 타입" },
+          { "id": "물", "label": "물 타입" },
+          { "id": "풀", "label": "풀 타입" },
+          { "id": "노말", "label": "노말 타입" }
+        ]
+      },
+      "validation": {
+        "kind": "bucket-assignment",
+        "expected": {
+          "poke:pokemon-25": ["전기"],
+          "poke:pokemon-4": ["불꽃"],
+          "poke:pokemon-7": ["물"],
+          "poke:pokemon-1": ["풀"],
+          "poke:pokemon-133": ["노말"]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "각 포켓몬의 첫인상 색깔이나 기술을 떠올려 보세요.",
+        "피카츄는 노란색이고 번개를 쓰고, 파이리는 꼬리에 불꽃이 있어요.",
+        "꼬부기=물, 이상해씨=풀, 이브이=노말이에요."
+      ],
+      "successMessage": "잘 묶었어요! 같은 5마리도 '키 순서'로 묶으면 또 다른 그룹이 나와요 — 그래서 분류는 '하나의 정답'이 아니에요.",
+      "relatedConcepts": ["classification-intuition", "ontology"]
+    },
+    {
+      "id": "ex-01-03",
+      "type": "drag-classify",
+      "title": "같은 포켓몬, 다른 기준으로 묶기",
+      "prompt": "이번엔 같은 5마리를 '세대'가 아니라 '몸집(키)' 기준으로 묶어 보세요. 같은 포켓몬도 기준을 바꾸면 다른 그룹에 들어갑니다.",
+      "init": {
+        "items": [
+          { "id": "poke:pokemon-25", "label": "피카츄 (0.4m)" },
+          { "id": "poke:pokemon-4", "label": "파이리 (0.6m)" },
+          { "id": "poke:pokemon-7", "label": "꼬부기 (0.5m)" },
+          { "id": "poke:pokemon-1", "label": "이상해씨 (0.7m)" },
+          { "id": "poke:pokemon-133", "label": "이브이 (0.3m)" }
+        ],
+        "buckets": [
+          { "id": "작음", "label": "작은 편 (0.5m 미만)" },
+          { "id": "보통", "label": "보통 (0.5m 이상 0.7m 미만)" },
+          { "id": "큼", "label": "큰 편 (0.7m 이상)" }
+        ]
+      },
+      "validation": {
+        "kind": "bucket-assignment",
+        "expected": {
+          "poke:pokemon-25": ["작음"],
+          "poke:pokemon-4": ["보통"],
+          "poke:pokemon-7": ["보통"],
+          "poke:pokemon-1": ["큼"],
+          "poke:pokemon-133": ["작음"]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "각 카드의 괄호 안 숫자만 보면 돼요.",
+        "0.5m가 경계선이에요. 그보다 작으면 '작음'.",
+        "이브이 0.3m와 피카츄 0.4m는 둘 다 '작음'이에요."
+      ],
+      "successMessage": "보세요 — 같은 포켓몬도 기준에 따라 다른 박스에 들어갔죠? 온톨로지는 '어떤 기준으로 묶을지'를 명시적으로 적는 학문이에요.",
+      "relatedConcepts": ["classification-intuition", "ontology"]
+    }
+  ]
+}

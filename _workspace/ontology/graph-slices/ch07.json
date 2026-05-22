@@ -1,0 +1,158 @@
+{
+  "id": "ch07",
+  "title": "도메인과 레인지",
+  "nodes": [
+    {
+      "id": "poke:Pokemon",
+      "label": "포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:Type",
+      "label": "타입",
+      "type": "class"
+    },
+    {
+      "id": "poke:Habitat",
+      "label": "서식지",
+      "type": "class"
+    },
+    {
+      "id": "poke:EggGroup",
+      "label": "알그룹",
+      "type": "class"
+    },
+    {
+      "id": "poke:evolvesTo",
+      "label": "진화함 (객체 속성)",
+      "type": "class"
+    },
+    {
+      "id": "poke:hasType",
+      "label": "타입을_가짐 (객체 속성)",
+      "type": "class"
+    },
+    {
+      "id": "poke:livesIn",
+      "label": "서식지에_삼 (객체 속성)",
+      "type": "class"
+    },
+    {
+      "id": "poke:height",
+      "label": "키 (데이터 속성)",
+      "type": "class"
+    },
+    {
+      "id": "poke:pokemon-25",
+      "label": "피카츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-26",
+      "label": "라이츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1",
+      "label": "이상해씨",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-3",
+      "label": "이상해꽃",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-4",
+      "label": "파이리",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-5",
+      "label": "리자드",
+      "type": "instance"
+    },
+    {
+      "id": "poke:FireType",
+      "label": "불꽃타입",
+      "type": "class"
+    },
+    {
+      "id": "poke:GrassType",
+      "label": "풀타입",
+      "type": "class"
+    },
+    {
+      "id": "poke:habitat-grassland",
+      "label": "초원",
+      "type": "instance"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:evolvesTo",
+      "target": "poke:Pokemon",
+      "label": "domain",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:evolvesTo",
+      "target": "poke:Pokemon",
+      "label": "range",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:hasType",
+      "target": "poke:Pokemon",
+      "label": "domain",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:hasType",
+      "target": "poke:Type",
+      "label": "range",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:livesIn",
+      "target": "poke:Pokemon",
+      "label": "domain",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:livesIn",
+      "target": "poke:Habitat",
+      "label": "range",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:pokemon-26",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:GrassType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-4",
+      "target": "poke:FireType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:habitat-grassland",
+      "label": "livesIn",
+      "kind": "object"
+    }
+  ],
+  "highlight": [
+    "poke:evolvesTo",
+    "poke:hasType"
+  ],
+  "layoutHint": "cose"
+}

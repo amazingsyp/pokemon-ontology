@@ -1,0 +1,181 @@
+{
+  "id": "ch10",
+  "title": "SPARQL 입문 - 전기타입 1세대",
+  "nodes": [
+    {
+      "id": "poke:ElectricTypePokemon",
+      "label": "전기타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:gen-1",
+      "label": "1세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:ElectricType",
+      "label": "전기타입",
+      "type": "class"
+    },
+    {
+      "id": "poke:pokemon-25",
+      "label": "피카츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-26",
+      "label": "라이츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-81",
+      "label": "코일",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-82",
+      "label": "레어코일",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-100",
+      "label": "찌리리공",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-101",
+      "label": "붐볼",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-125",
+      "label": "에레브",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-135",
+      "label": "쥬피썬더",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-145",
+      "label": "썬더",
+      "type": "instance"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-26",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-26",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-81",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-81",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-82",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-82",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-100",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-100",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-101",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-101",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-125",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-125",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-135",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-135",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-145",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-145",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    }
+  ],
+  "highlight": [
+    "poke:ElectricType",
+    "poke:gen-1"
+  ],
+  "layoutHint": "concentric"
+}

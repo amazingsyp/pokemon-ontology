@@ -1,0 +1,1688 @@
+{
+  "id": "ch14",
+  "title": "상위 온톨로지와 재사용",
+  "nodes": [
+    {
+      "id": "poke:Entity",
+      "label": "실체(Entity)",
+      "type": "class"
+    },
+    {
+      "id": "poke:FictionalCharacter",
+      "label": "가상의 존재",
+      "type": "class"
+    },
+    {
+      "id": "poke:GameCharacter",
+      "label": "게임 캐릭터",
+      "type": "class"
+    },
+    {
+      "id": "poke:Pokemon",
+      "label": "포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:LegendaryPokemon",
+      "label": "전설의 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:MythicalPokemon",
+      "label": "환상의 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:DualTypePokemon",
+      "label": "듀얼 타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:BugTypePokemon",
+      "label": "벌레타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:DarkTypePokemon",
+      "label": "악타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:DragonTypePokemon",
+      "label": "드래곤타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:ElectricTypePokemon",
+      "label": "전기타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:FairyTypePokemon",
+      "label": "페어리타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:FightingTypePokemon",
+      "label": "격투타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:FireTypePokemon",
+      "label": "불꽃타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:FlyingTypePokemon",
+      "label": "비행타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:GhostTypePokemon",
+      "label": "고스트타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:GrassTypePokemon",
+      "label": "풀타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:GroundTypePokemon",
+      "label": "땅타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:IceTypePokemon",
+      "label": "얼음타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:NormalTypePokemon",
+      "label": "노말타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:PoisonTypePokemon",
+      "label": "독타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:PsychicTypePokemon",
+      "label": "에스퍼타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:RockTypePokemon",
+      "label": "바위타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:SteelTypePokemon",
+      "label": "강철타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:WaterTypePokemon",
+      "label": "물타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:gen-1",
+      "label": "1세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-2",
+      "label": "2세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-3",
+      "label": "3세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-4",
+      "label": "4세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-5",
+      "label": "5세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-6",
+      "label": "6세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-7",
+      "label": "7세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-8",
+      "label": "8세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-9",
+      "label": "9세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1",
+      "label": "이상해씨",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-4",
+      "label": "파이리",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-7",
+      "label": "꼬부기",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-25",
+      "label": "피카츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-26",
+      "label": "라이츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-133",
+      "label": "이브이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-134",
+      "label": "샤미드",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-135",
+      "label": "쥬피썬더",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-136",
+      "label": "부스터",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-6",
+      "label": "리자몽",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-9",
+      "label": "거북왕",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-3",
+      "label": "이상해꽃",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-150",
+      "label": "뮤츠",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-151",
+      "label": "뮤",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-152",
+      "label": "치코리타",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-155",
+      "label": "브케인",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-158",
+      "label": "리아코",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-196",
+      "label": "에브이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-197",
+      "label": "블래키",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-248",
+      "label": "마기라스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-252",
+      "label": "나무지기",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-255",
+      "label": "아차모",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-258",
+      "label": "물짱이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-384",
+      "label": "레쿠쟈",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-386",
+      "label": "테오키스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-387",
+      "label": "모부기",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-390",
+      "label": "불꽃숭이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-393",
+      "label": "팽도리",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-470",
+      "label": "리피아",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-471",
+      "label": "글레이시아",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-491",
+      "label": "다크라이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-495",
+      "label": "주리비얀",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-498",
+      "label": "뚜꾸리",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-501",
+      "label": "수댕이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-643",
+      "label": "레시라무",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-644",
+      "label": "제크로무",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-646",
+      "label": "큐레무",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-650",
+      "label": "도치마론",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-653",
+      "label": "푸호꼬",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-656",
+      "label": "개구마르",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-716",
+      "label": "제르네아스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-717",
+      "label": "이벨타르",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-718",
+      "label": "지가르데",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-722",
+      "label": "나몰빼미",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-725",
+      "label": "냐오불",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-728",
+      "label": "누리공",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-791",
+      "label": "솔가레오",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-792",
+      "label": "루나아라",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-800",
+      "label": "네크로즈마",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-810",
+      "label": "흥나숭",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-813",
+      "label": "염버니",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-816",
+      "label": "울머기",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-887",
+      "label": "드래펄트",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-888",
+      "label": "자시안",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-890",
+      "label": "무한다이노",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-906",
+      "label": "나오하",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-909",
+      "label": "뜨아거",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-912",
+      "label": "꾸왁스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-997",
+      "label": "드니꽁",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1007",
+      "label": "코라이돈",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1008",
+      "label": "미라이돈",
+      "type": "instance"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:FictionalCharacter",
+      "target": "poke:Entity",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:GameCharacter",
+      "target": "poke:FictionalCharacter",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:Pokemon",
+      "target": "poke:GameCharacter",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:LegendaryPokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:MythicalPokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:DualTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:BugTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:DarkTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:DragonTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:ElectricTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:FairyTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:FightingTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:FireTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:FlyingTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:GhostTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:GrassTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:GroundTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:IceTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:NormalTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:PoisonTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:PsychicTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:RockTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:SteelTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:WaterTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:PoisonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-4",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-4",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-7",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-7",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:ElectricTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-26",
+      "target": "poke:ElectricTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-26",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:NormalTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-134",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-134",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-135",
+      "target": "poke:ElectricTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-135",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-136",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-136",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-6",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-6",
+      "target": "poke:FlyingTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-6",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-6",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-9",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-9",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-3",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-3",
+      "target": "poke:PoisonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-3",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-3",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-150",
+      "target": "poke:PsychicTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-150",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-150",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-151",
+      "target": "poke:PsychicTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-151",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-151",
+      "target": "poke:MythicalPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-152",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-152",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-155",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-155",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-158",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-158",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-196",
+      "target": "poke:PsychicTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-196",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-197",
+      "target": "poke:DarkTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-197",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-248",
+      "target": "poke:RockTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-248",
+      "target": "poke:DarkTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-248",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-248",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-252",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-252",
+      "target": "poke:gen-3",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-255",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-255",
+      "target": "poke:gen-3",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-258",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-258",
+      "target": "poke:gen-3",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-384",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-384",
+      "target": "poke:FlyingTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-384",
+      "target": "poke:gen-3",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-384",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-384",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-386",
+      "target": "poke:PsychicTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-386",
+      "target": "poke:gen-3",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-386",
+      "target": "poke:MythicalPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-387",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-387",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-390",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-390",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-393",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-393",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-470",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-470",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-471",
+      "target": "poke:IceTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-471",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-491",
+      "target": "poke:DarkTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-491",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-491",
+      "target": "poke:MythicalPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-495",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-495",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-498",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-498",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-501",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-501",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-643",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-643",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-643",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-643",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-643",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-644",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-644",
+      "target": "poke:ElectricTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-644",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-644",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-644",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-646",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-646",
+      "target": "poke:IceTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-646",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-646",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-646",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-650",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-650",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-653",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-653",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-656",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-656",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-716",
+      "target": "poke:FairyTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-716",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-716",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-717",
+      "target": "poke:DarkTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-717",
+      "target": "poke:FlyingTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-717",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-717",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-717",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-718",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-718",
+      "target": "poke:GroundTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-718",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-718",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-718",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-722",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-722",
+      "target": "poke:FlyingTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-722",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-722",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-725",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-725",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-728",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-728",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-791",
+      "target": "poke:PsychicTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-791",
+      "target": "poke:SteelTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-791",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-791",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-791",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-792",
+      "target": "poke:PsychicTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-792",
+      "target": "poke:GhostTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-792",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-792",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-792",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-800",
+      "target": "poke:PsychicTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-800",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-800",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-810",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-810",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-813",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-813",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-816",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-816",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-887",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-887",
+      "target": "poke:GhostTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-887",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-887",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-888",
+      "target": "poke:FairyTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-888",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-888",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-890",
+      "target": "poke:PoisonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-890",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-890",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-890",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-890",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-906",
+      "target": "poke:GrassTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-906",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-909",
+      "target": "poke:FireTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-909",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-912",
+      "target": "poke:WaterTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-912",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-997",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-997",
+      "target": "poke:IceTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-997",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-997",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1007",
+      "target": "poke:FightingTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1007",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1007",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1007",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1007",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1008",
+      "target": "poke:ElectricTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1008",
+      "target": "poke:DragonTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1008",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1008",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1008",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    }
+  ],
+  "highlight": [
+    "poke:Entity",
+    "poke:Pokemon"
+  ],
+  "layoutHint": "dagre"
+}

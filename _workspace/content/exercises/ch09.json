@@ -1,0 +1,117 @@
+{
+  "chapterId": "ch09",
+  "exercises": [
+    {
+      "id": "ex-09-01",
+      "type": "quiz",
+      "title": "RDF가 뭐예요?",
+      "prompt": "RDF에 대한 가장 정확한 한 줄 설명은?",
+      "init": {
+        "choices": [
+          "포켓몬 데이터베이스 회사 이름",
+          "트리플의 집합으로 데이터를 기술하는 표준 모델",
+          "프로그래밍 언어",
+          "포켓몬 게임의 파일 형식"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "지금까지 배운 '트리플'과 깊은 관련이 있어요.",
+        "Resource Description Framework의 약자예요.",
+        "트리플로 자원을 기술하는 표준."
+      ],
+      "successMessage": "맞아요! RDF는 '모든 사실을 트리플로'라는 약속을 표준화한 모델이에요.",
+      "relatedConcepts": ["rdf"]
+    },
+    {
+      "id": "ex-09-02",
+      "type": "matching",
+      "title": "prefix와 풀 IRI 짝짓기",
+      "prompt": "왼쪽의 prefix가 붙은 짧은 이름과, 오른쪽의 풀 형태가 어떻게 매핑되는지 짝지어 보세요.",
+      "init": {
+        "left": [
+          { "id": "poke:Pokemon", "label": "poke:Pokemon" },
+          { "id": "rdf:type", "label": "rdf:type" },
+          { "id": "rdfs:subClassOf", "label": "rdfs:subClassOf" },
+          { "id": "xsd:integer", "label": "xsd:integer" }
+        ],
+        "right": [
+          { "id": "poke-full", "label": "https://example.org/pokemon# + Pokemon" },
+          { "id": "rdf-full", "label": "http://www.w3.org/1999/02/22-rdf-syntax-ns# + type" },
+          { "id": "rdfs-full", "label": "http://www.w3.org/2000/01/rdf-schema# + subClassOf" },
+          { "id": "xsd-full", "label": "http://www.w3.org/2001/XMLSchema# + integer" }
+        ]
+      },
+      "validation": {
+        "kind": "matching-pairs",
+        "expected": {
+          "poke:Pokemon": "poke-full",
+          "rdf:type": "rdf-full",
+          "rdfs:subClassOf": "rdfs-full",
+          "xsd:integer": "xsd-full"
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "콜론(:) 앞 부분이 prefix, 뒷 부분이 '로컬 이름'이에요.",
+        "각 prefix가 어떤 네임스페이스 URI를 줄여 쓰는지 확인하세요.",
+        "이름이 같은 prefix끼리(예: poke:Pokemon ↔ poke 네임스페이스의 Pokemon) 매칭."
+      ],
+      "successMessage": "맞아요! prefix는 긴 IRI를 짧게 줄이는 도구예요.",
+      "relatedConcepts": ["iri-namespace", "turtle-syntax"]
+    },
+    {
+      "id": "ex-09-03",
+      "type": "triple-build",
+      "title": "Turtle 한 줄로 — '피카츄 hasType 전기타입'",
+      "prompt": "Turtle 문법은 'subject predicate object .' 형태예요. 드롭다운으로 정확한 한 줄을 만들어 보세요.",
+      "init": {
+        "subjects": ["poke:pokemon-25", "poke:pokemon-26", "poke:ElectricType"],
+        "predicates": ["poke:hasType", "poke:evolvesTo", "rdf:type"],
+        "objects": ["poke:ElectricType", "poke:pokemon-26", "poke:Pokemon"]
+      },
+      "validation": {
+        "kind": "exact-match",
+        "expected": ["poke:pokemon-25", "poke:hasType", "poke:ElectricType"],
+        "partialCredit": false
+      },
+      "hints": [
+        "주어=피카츄(IRI는 poke:pokemon-25), 술어=hasType, 목적어=전기타입.",
+        "Turtle은 이전에 만들었던 트리플을 그대로 적은 거예요.",
+        "poke:pokemon-25 poke:hasType poke:ElectricType ."
+      ],
+      "successMessage": "정확! 이게 Turtle 한 줄이에요. 끝에 마침표(.) 한 개로 트리플이 끝나요.",
+      "relatedConcepts": ["turtle-syntax", "triple"]
+    },
+    {
+      "id": "ex-09-04",
+      "type": "quiz",
+      "title": "IRI가 필요한 이유",
+      "prompt": "왜 그냥 '피카츄'라고 안 쓰고 'poke:pokemon-25' 같은 IRI를 쓸까요?",
+      "init": {
+        "choices": [
+          "외국 사람들이 못 읽게 하려고",
+          "전세계에서 같은 자원을 가리킬 때 충돌 없이 고유하게 식별하려고",
+          "데이터 용량을 줄이려고",
+          "검색 엔진이 못 찾게 하려고"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "'고유 이름'이 왜 필요할지 생각해 보세요.",
+        "동명이인이나 같은 이름의 다른 자원과의 혼동을 막아야 해요.",
+        "전세계 = global, 고유 식별 = unique identifier."
+      ],
+      "successMessage": "맞아요! IRI는 전세계에서 한 자원을 충돌 없이 가리키는 고유 주소예요.",
+      "relatedConcepts": ["iri-namespace"]
+    }
+  ]
+}

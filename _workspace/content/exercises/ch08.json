@@ -1,0 +1,123 @@
+{
+  "chapterId": "ch08",
+  "exercises": [
+    {
+      "id": "ex-08-01",
+      "type": "quiz",
+      "title": "역관계의 정의",
+      "prompt": "evolvesTo(진화함)의 역관계는 무엇일까요?",
+      "init": {
+        "choices": [
+          "hasType (타입을_가짐)",
+          "evolvesFrom (진화_전)",
+          "evolvesToEventually (결국_진화함)",
+          "subClassOf (서브클래스)"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "역관계는 '주어와 목적어를 바꾼 짝 속성'이에요.",
+        "'A가 B로 진화한다'를 뒤집으면 'B의 진화 전이 A'예요.",
+        "이름에 'From'이 들어간 거예요."
+      ],
+      "successMessage": "맞아요! evolvesTo의 역관계는 evolvesFrom이에요.",
+      "relatedConcepts": ["inverse-property"]
+    },
+    {
+      "id": "ex-08-02",
+      "type": "triple-build",
+      "title": "역관계로 자동 도출되는 트리플",
+      "prompt": "이미 '피츄 evolvesTo 피카츄'가 입력되어 있어요. 역관계 규칙으로 도출되는 트리플 한 줄을 드롭다운으로 만드세요.",
+      "init": {
+        "subjects": ["poke:pokemon-172 (피츄)", "poke:pokemon-25 (피카츄)", "poke:pokemon-26 (라이츄)"],
+        "predicates": ["poke:evolvesFrom (진화_전)", "poke:evolvesTo (진화함)", "poke:hasType (타입을_가짐)"],
+        "objects": ["poke:pokemon-25 (피카츄)", "poke:pokemon-172 (피츄)", "poke:pokemon-26 (라이츄)"]
+      },
+      "validation": {
+        "kind": "exact-match",
+        "expected": ["poke:pokemon-25 (피카츄)", "poke:evolvesFrom (진화_전)", "poke:pokemon-172 (피츄)"],
+        "partialCredit": false
+      },
+      "hints": [
+        "원본은 'A evolvesTo B'였어요. 역관계는 주어·목적어를 바꿔요.",
+        "B의 진화 전이 A라는 사실이 자동으로 따라와요.",
+        "피카츄 → evolvesFrom → 피츄."
+      ],
+      "successMessage": "맞아요! 역관계가 정의되어 있으니 사람이 직접 안 적어도 돼요.",
+      "relatedConcepts": ["inverse-property"]
+    },
+    {
+      "id": "ex-08-03",
+      "type": "reasoning-sim",
+      "title": "전이 관계로 새 트리플 도출",
+      "prompt": "다음 두 트리플과 추이성 규칙이 있을 때, 새로 도출되는 트리플은?",
+      "init": {
+        "givenTriples": [
+          ["poke:pokemon-172", "poke:evolvesTo", "poke:pokemon-25"],
+          ["poke:pokemon-25", "poke:evolvesTo", "poke:pokemon-26"]
+        ],
+        "rule": {
+          "if": [["?a", "poke:evolvesTo", "?b"], ["?b", "poke:evolvesTo", "?c"]],
+          "then": [["?a", "poke:evolvesToEventually", "?c"]]
+        },
+        "candidateAnswers": [
+          ["poke:pokemon-172", "poke:evolvesToEventually", "poke:pokemon-26"],
+          ["poke:pokemon-26", "poke:evolvesToEventually", "poke:pokemon-172"],
+          ["poke:pokemon-25", "poke:evolvesToEventually", "poke:pokemon-25"],
+          ["poke:pokemon-172", "poke:evolvesTo", "poke:pokemon-26"]
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [0],
+        "partialCredit": false
+      },
+      "hints": [
+        "?a, ?b, ?c에 각각 어떤 포켓몬이 들어가는지 매칭하세요.",
+        "?a=피츄, ?b=피카츄, ?c=라이츄로 바인딩돼요.",
+        "결과는 '피츄 결국_진화함 라이츄'예요."
+      ],
+      "successMessage": "정답! 진화 사슬을 끝까지 따라간 결과가 한 줄로 압축돼요. 이게 전이성(transitivity)이에요.",
+      "relatedConcepts": ["transitive-property"]
+    },
+    {
+      "id": "ex-08-04",
+      "type": "reasoning-sim",
+      "title": "이브이 형제 그래프의 자동 완성",
+      "prompt": "이브이가 샤미드·쥬피썬더·부스터로 진화한다는 트리플 3개와 역관계 규칙이 있어요. 도출되는 트리플은? (여러 개 선택 가능)",
+      "init": {
+        "givenTriples": [
+          ["poke:pokemon-133", "poke:evolvesTo", "poke:pokemon-134"],
+          ["poke:pokemon-133", "poke:evolvesTo", "poke:pokemon-135"],
+          ["poke:pokemon-133", "poke:evolvesTo", "poke:pokemon-136"]
+        ],
+        "rule": {
+          "if": [["?a", "poke:evolvesTo", "?b"]],
+          "then": [["?b", "poke:evolvesFrom", "?a"]]
+        },
+        "candidateAnswers": [
+          ["poke:pokemon-134", "poke:evolvesFrom", "poke:pokemon-133"],
+          ["poke:pokemon-135", "poke:evolvesFrom", "poke:pokemon-133"],
+          ["poke:pokemon-136", "poke:evolvesFrom", "poke:pokemon-133"],
+          ["poke:pokemon-133", "poke:evolvesFrom", "poke:pokemon-134"]
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [0, 1, 2],
+        "partialCredit": true
+      },
+      "hints": [
+        "역관계 규칙을 3개의 입력 트리플에 각각 적용해 보세요.",
+        "각 진화형에서 이브이로 향하는 'evolvesFrom' 트리플이 생겨요.",
+        "정답은 3개예요. 마지막 선택지는 방향이 거꾸로(이브이가 진화_전이 될 수 없음)예요."
+      ],
+      "successMessage": "잘 했어요! 사람이 적은 3개 → 자동으로 3개 더. 데이터 양이 절반만으로 충분해요.",
+      "relatedConcepts": ["inverse-property"]
+    }
+  ]
+}

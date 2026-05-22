@@ -1,0 +1,93 @@
+{
+  "id": "ch03",
+  "title": "속성: 데이터와 객체",
+  "nodes": [
+    {
+      "id": "poke:pokemon-25",
+      "label": "피카츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1",
+      "label": "이상해씨",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-133",
+      "label": "이브이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:ElectricType",
+      "label": "전기타입",
+      "type": "class"
+    },
+    {
+      "id": "poke:GrassType",
+      "label": "풀타입",
+      "type": "class"
+    },
+    {
+      "id": "lit:25:height",
+      "label": "0.4 m",
+      "type": "literal"
+    },
+    {
+      "id": "lit:25:weight",
+      "label": "6.0 kg",
+      "type": "literal"
+    },
+    {
+      "id": "lit:1:height",
+      "label": "0.7 m",
+      "type": "literal"
+    },
+    {
+      "id": "poke:pokemon-26",
+      "label": "라이츄",
+      "type": "instance"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "lit:25:height",
+      "label": "height",
+      "kind": "data"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "lit:25:weight",
+      "label": "weight",
+      "kind": "data"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:pokemon-26",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:GrassType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "lit:1:height",
+      "label": "height",
+      "kind": "data"
+    }
+  ],
+  "highlight": [
+    "poke:pokemon-25"
+  ],
+  "layoutHint": "cose"
+}

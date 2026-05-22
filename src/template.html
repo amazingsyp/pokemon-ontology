@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#FAFAF7">
+  <meta name="description" content="포켓몬 1000여 마리를 직접 만지며 온톨로지를 처음부터 배우는 인터랙티브 학습 프로그램">
+  <link rel="icon" href="data:,">
+  <title>포켓몬으로 배우는 온톨로지</title>
+  <!-- INLINE_STYLES -->
+</head>
+<body data-theme="light">
+  <header class="topbar" role="banner">
+    <button class="hamburger" id="hamburger-btn" aria-label="챕터 목록 열기" aria-expanded="false" aria-controls="chapter-list">
+      <span aria-hidden="true">≡</span>
+    </button>
+    <h1 class="brand">
+      <span class="brand-emoji" aria-hidden="true">▦</span>
+      <span class="brand-text">포켓몬 × 온톨로지</span>
+    </h1>
+    <div class="topbar-actions">
+      <div class="progress-wrap" title="전체 진도">
+        <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="14" aria-valuenow="0" aria-label="전체 진도">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="progress-label" id="progress-label">0 / 14</span>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="다크모드 전환" title="다크모드 전환">
+        <span class="theme-icon-light" aria-hidden="true">☾</span>
+        <span class="theme-icon-dark" aria-hidden="true">☀</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+  <main class="layout" role="main">
+    <aside class="sidebar" id="chapter-list" aria-label="챕터 목록">
+      <div class="sidebar-header">
+        <h2 class="sidebar-title">학습 챕터</h2>
+        <p class="sidebar-subtitle">14챕터 · 약 240분</p>
+      </div>
+      <nav class="chapter-nav" id="chapter-nav">
+        <!-- 챕터 목록 (main.js가 채움) -->
+      </nav>
+      <div class="sidebar-footer">
+        <button class="reset-btn" id="reset-progress" title="진도 초기화">진도 초기화</button>
+      </div>
+    </aside>
+
+    <article class="content" id="chapter-content" aria-live="polite">
+      <!-- 챕터 본문 (chapter-renderer.js가 채움) -->
+      <div class="loading">불러오는 중…</div>
+    </article>
+
+    <aside class="graph-panel" id="graph-panel" aria-label="그래프 시각화">
+      <div class="graph-header">
+        <h3 class="graph-title" id="graph-title">그래프</h3>
+        <p class="graph-hint">탭/드래그로 노드를 움직여 보세요</p>
+      </div>
+      <div class="graph-container" id="graph-container"></div>
+      <div class="graph-controls">
+        <button data-action="fit" type="button" title="화면에 맞춤">⤢ 맞춤</button>
+        <button data-action="reset" type="button" title="레이아웃 재설정">↻ 재정렬</button>
+        <button data-action="fullscreen" type="button" title="전체화면">⛶ 전체화면</button>
+      </div>
+      <div class="graph-legend">
+        <span class="legend-item"><span class="legend-dot legend-class"></span>클래스</span>
+        <span class="legend-item"><span class="legend-dot legend-instance"></span>인스턴스</span>
+        <span class="legend-item"><span class="legend-dot legend-literal"></span>리터럴</span>
+      </div>
+    </aside>
+  </main>
+
+  <nav class="mobile-nav" aria-label="챕터 이동">
+    <button class="prev-chapter" id="prev-chapter" type="button" aria-label="이전 챕터">◀ 이전</button>
+    <span class="current-chapter-label" id="current-chapter-label">챕터 1</span>
+    <button class="next-chapter" id="next-chapter" type="button" aria-label="다음 챕터">다음 ▶</button>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- INLINE_DATA -->
+  <!-- INLINE_SCRIPTS -->
+</body>
+</html>

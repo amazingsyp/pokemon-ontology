@@ -1,0 +1,127 @@
+/* theme.css — 디자인 토큰 (라이트/다크) */
+
+:root {
+  /* 라이트 모드 */
+  --bg: #FAFAF7;
+  --bg-soft: #F3F3EE;
+  --text: #1F2937;
+  --text-muted: #6B7280;
+  --accent: #14B8A6;
+  --accent-strong: #0F766E;
+  --accent-soft: #CCFBF1;
+  --border: #E5E7EB;
+  --border-strong: #D1D5DB;
+  --card: #FFFFFF;
+  --card-hover: #F9FAFB;
+  --code-bg: #F3F4F6;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+
+  /* 의미 색상 */
+  --info: #3B82F6;
+  --warn: #F59E0B;
+  --warn-soft: #FEF3C7;
+  --warn-soft-2: #FDE68A;
+  --danger: #EF4444;
+  --success: #10B981;
+  --tip-bg: #ECFDF5;
+
+  /* 그래프 노드 색 */
+  --node-class-bg: #3B82F6;
+  --node-class-fg: #FFFFFF;
+  --node-class-border: #1E40AF;
+  --node-instance-bg: #F59E0B;
+  --node-instance-fg: #1F2937;
+  --node-instance-border: #B45309;
+  --node-literal-bg: #9CA3AF;
+  --node-literal-fg: #1F2937;
+  --node-literal-border: #4B5563;
+  --edge-object: #14B8A6;
+  --edge-isa: #8B5CF6;
+  --edge-isa-fg: #6D28D9;
+  --edge-data: #6B7280;
+  --edge-data-fg: #4B5563;
+  --edge-label-bg: #FFFFFF;
+  --edge-label-fg: #0F766E;
+  --highlight-color: #F59E0B;
+  --inferred-color: #EF4444;
+  --selected-color: #EC4899;
+  --edge-source-color: #10B981;
+
+  /* 타이포 */
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'D2Coding', 'SF Mono', Menlo, Consolas, monospace;
+  --fs-base: 16px;
+  --line-height: 1.7;
+
+  /* 간격 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* 둥근 모서리 */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* 그림자 */
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 4px 12px var(--shadow-color);
+  --shadow-lg: 0 12px 28px var(--shadow-color);
+
+  /* 레이아웃 상수 */
+  --topbar-h: 56px;
+  --mobile-nav-h: 56px;
+}
+
+[data-theme="dark"] {
+  --bg: #0F172A;
+  --bg-soft: #1E293B;
+  --text: #F1F5F9;
+  --text-muted: #94A3B8;
+  --accent: #2DD4BF;
+  --accent-strong: #5EEAD4;
+  --accent-soft: #134E4A;
+  --border: #334155;
+  --border-strong: #475569;
+  --card: #1E293B;
+  --card-hover: #273449;
+  --code-bg: #0B1220;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+
+  --info: #60A5FA;
+  --warn: #FBBF24;
+  --warn-soft: #422006;
+  --warn-soft-2: #78350F;
+  --danger: #F87171;
+  --success: #34D399;
+  --tip-bg: #064E3B;
+
+  --node-class-bg: #60A5FA;
+  --node-class-fg: #0F172A;
+  --node-class-border: #1E40AF;
+  --node-instance-bg: #FBBF24;
+  --node-instance-fg: #1F2937;
+  --node-instance-border: #B45309;
+  --node-literal-bg: #94A3B8;
+  --node-literal-fg: #0F172A;
+  --node-literal-border: #475569;
+  --edge-object: #2DD4BF;
+  --edge-isa: #A78BFA;
+  --edge-isa-fg: #C4B5FD;
+  --edge-data: #94A3B8;
+  --edge-data-fg: #CBD5E1;
+  --edge-label-bg: #1E293B;
+  --edge-label-fg: #5EEAD4;
+  --highlight-color: #FBBF24;
+  --inferred-color: #F87171;
+  --selected-color: #F472B6;
+  --edge-source-color: #34D399;
+}

@@ -1,0 +1,62 @@
+{
+  "id": "ch02",
+  "title": "클래스와 인스턴스",
+  "nodes": [
+    {
+      "id": "poke:Pokemon",
+      "label": "포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:pokemon-25",
+      "label": "피카츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-26",
+      "label": "라이츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-172",
+      "label": "피츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-133",
+      "label": "이브이",
+      "type": "instance"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:Pokemon",
+      "label": "instance-of",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-26",
+      "target": "poke:Pokemon",
+      "label": "instance-of",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-172",
+      "target": "poke:Pokemon",
+      "label": "instance-of",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:Pokemon",
+      "label": "instance-of",
+      "kind": "is-a"
+    }
+  ],
+  "highlight": [
+    "poke:Pokemon",
+    "poke:pokemon-25"
+  ],
+  "layoutHint": "breadthfirst"
+}

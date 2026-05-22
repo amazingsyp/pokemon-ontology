@@ -1,0 +1,140 @@
+{
+  "chapterId": "ch12",
+  "exercises": [
+    {
+      "id": "ex-12-01",
+      "type": "quiz",
+      "title": "OWL이 더 표현력 있는 이유",
+      "prompt": "OWL이 RDF Schema보다 더 강력한 이유로 가장 적절한 것은?",
+      "init": {
+        "choices": [
+          "OWL은 한국어를 지원하기 때문",
+          "OWL은 클래스를 '조건의 모음(제약, restriction)'으로 정의할 수 있기 때문",
+          "OWL은 더 빠르기 때문",
+          "OWL은 무료이기 때문"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "OWL의 'restriction' 개념을 떠올려 보세요.",
+        "클래스를 그냥 이름으로 두는 게 아니라 '조건'으로 정의할 수 있어요.",
+        "'전설의 포켓몬 = isLegendary가 true인 포켓몬' 같은 정의."
+      ],
+      "successMessage": "맞아요! OWL은 클래스를 '조건의 묶음'으로 정의할 수 있게 해줘서 표현력이 높아요.",
+      "relatedConcepts": ["owl", "class-restriction"]
+    },
+    {
+      "id": "ex-12-02",
+      "type": "matching",
+      "title": "OWL 정의와 클래스 짝짓기",
+      "prompt": "왼쪽의 OWL 정의가 가리키는 클래스를 오른쪽에서 골라 매칭하세요.",
+      "init": {
+        "left": [
+          { "id": "def-legendary", "label": "Pokemon ⊓ (isLegendary value true)" },
+          { "id": "def-dual", "label": "Pokemon ⊓ (hasType min 2 Type)" },
+          { "id": "def-fire", "label": "Pokemon ⊓ (hasType value poke:FireType)" },
+          { "id": "def-mythical", "label": "Pokemon ⊓ (isMythical value true)" }
+        ],
+        "right": [
+          { "id": "poke:LegendaryPokemon", "label": "전설의 포켓몬" },
+          { "id": "poke:DualTypePokemon", "label": "듀얼 타입 포켓몬" },
+          { "id": "poke:FireTypePokemon", "label": "불꽃타입 포켓몬" },
+          { "id": "poke:MythicalPokemon", "label": "환상의 포켓몬" }
+        ]
+      },
+      "validation": {
+        "kind": "matching-pairs",
+        "expected": {
+          "def-legendary": "poke:LegendaryPokemon",
+          "def-dual": "poke:DualTypePokemon",
+          "def-fire": "poke:FireTypePokemon",
+          "def-mythical": "poke:MythicalPokemon"
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "각 정의에서 핵심 조건(isLegendary, isMythical, hasType ...)을 읽어보세요.",
+        "value는 '특정 값 하나', min 2는 '최소 2개'를 뜻해요.",
+        "이름과 정의의 키워드가 일치해요."
+      ],
+      "successMessage": "잘 했어요! OWL 정의를 읽는 눈이 생겼어요.",
+      "relatedConcepts": ["owl", "class-restriction", "equivalent-class"]
+    },
+    {
+      "id": "ex-12-03",
+      "type": "drag-classify",
+      "title": "후보 포켓몬을 OWL 정의에 따라 분류",
+      "prompt": "다음 포켓몬들이 어떤 OWL 정의 클래스에 속하는지 분류하세요. 둘 이상에 속할 수도 있어요.",
+      "init": {
+        "items": [
+          { "id": "poke:pokemon-144", "label": "프리져 (얼음·비행, 전설)" },
+          { "id": "poke:pokemon-145", "label": "썬더 (전기·비행, 전설)" },
+          { "id": "poke:pokemon-146", "label": "파이어 (불꽃·비행, 전설)" },
+          { "id": "poke:pokemon-150", "label": "뮤츠 (에스퍼, 전설)" },
+          { "id": "poke:pokemon-151", "label": "뮤 (에스퍼, 환상)" }
+        ],
+        "buckets": [
+          { "id": "poke:LegendaryPokemon", "label": "전설의 포켓몬" },
+          { "id": "poke:MythicalPokemon", "label": "환상의 포켓몬" },
+          { "id": "poke:DualTypePokemon", "label": "듀얼 타입 포켓몬" }
+        ]
+      },
+      "validation": {
+        "kind": "bucket-assignment",
+        "expected": {
+          "poke:pokemon-144": ["poke:LegendaryPokemon", "poke:DualTypePokemon"],
+          "poke:pokemon-145": ["poke:LegendaryPokemon", "poke:DualTypePokemon"],
+          "poke:pokemon-146": ["poke:LegendaryPokemon", "poke:DualTypePokemon"],
+          "poke:pokemon-150": ["poke:LegendaryPokemon"],
+          "poke:pokemon-151": ["poke:MythicalPokemon"]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "각 포켓몬의 (타입 수, 전설/환상 여부)를 차례로 확인하세요.",
+        "프리져·썬더·파이어는 두 타입 + 전설 모두 충족, 뮤츠는 단일 타입 + 전설.",
+        "뮤만 환상이에요. 뮤츠는 전설."
+      ],
+      "successMessage": "맞아요! 같은 포켓몬이 여러 OWL 정의를 동시에 충족할 수 있어요.",
+      "relatedConcepts": ["owl", "class-restriction"]
+    },
+    {
+      "id": "ex-12-04",
+      "type": "reasoning-sim",
+      "title": "OWL 제약이 만드는 자동 분류",
+      "prompt": "다음 트리플과 OWL 정의가 있을 때 자동으로 도출되는 분류 트리플은?",
+      "init": {
+        "givenTriples": [
+          ["poke:pokemon-150", "rdf:type", "poke:Pokemon"],
+          ["poke:pokemon-150", "poke:isLegendary", "\"true\"^^xsd:boolean"]
+        ],
+        "rule": {
+          "if": [["?p", "rdf:type", "poke:Pokemon"], ["?p", "poke:isLegendary", "\"true\"^^xsd:boolean"]],
+          "then": [["?p", "rdf:type", "poke:LegendaryPokemon"]]
+        },
+        "candidateAnswers": [
+          ["poke:pokemon-150", "rdf:type", "poke:LegendaryPokemon"],
+          ["poke:pokemon-150", "rdf:type", "poke:MythicalPokemon"],
+          ["poke:LegendaryPokemon", "rdf:type", "poke:pokemon-150"],
+          ["poke:pokemon-150", "poke:isLegendary", "false"]
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [0],
+        "partialCredit": false
+      },
+      "hints": [
+        "?p에 무엇이 바인딩되는지 보세요.",
+        "?p = pokemon-150 (뮤츠), 그래서 뮤츠가 LegendaryPokemon으로 분류돼요.",
+        "결과는 '뮤츠 rdf:type LegendaryPokemon'."
+      ],
+      "successMessage": "정답! OWL 정의 한 줄로 멤버가 자동 분류돼요 — 이게 다음 챕터(추론)의 핵심이에요.",
+      "relatedConcepts": ["owl", "class-restriction", "equivalent-class"]
+    }
+  ]
+}

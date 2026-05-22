@@ -1,0 +1,114 @@
+{
+  "chapterId": "ch04",
+  "exercises": [
+    {
+      "id": "ex-04-01",
+      "type": "quiz",
+      "title": "트리플의 세 자리",
+      "prompt": "'피카츄는 라이츄로 진화한다'를 트리플로 적을 때, 다음 중 술어(predicate)에 해당하는 부분은?",
+      "init": {
+        "choices": [
+          "피카츄",
+          "진화함",
+          "라이츄",
+          "다 술어다"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "주어·술어·목적어 중 '관계의 종류'를 가리키는 자리예요.",
+        "트리플의 가운데 자리예요.",
+        "두 포켓몬을 잇는 동사가 술어예요."
+      ],
+      "successMessage": "맞아요! 주어=피카츄, 술어=진화함, 목적어=라이츄.",
+      "relatedConcepts": ["triple", "subject-predicate-object"]
+    },
+    {
+      "id": "ex-04-02",
+      "type": "triple-build",
+      "title": "'피카츄는 전기 타입이다' 트리플 만들기",
+      "prompt": "드롭다운에서 주어·술어·목적어를 골라 '피카츄는 전기 타입이다'를 트리플로 표현하세요.",
+      "init": {
+        "subjects": ["poke:pokemon-25 (피카츄)", "poke:pokemon-26 (라이츄)", "poke:ElectricType (전기타입)", "poke:Pokemon (포켓몬)"],
+        "predicates": ["poke:hasType (타입을_가짐)", "poke:evolvesTo (진화함)", "rdf:type", "rdfs:subClassOf"],
+        "objects": ["poke:ElectricType (전기타입)", "poke:pokemon-26 (라이츄)", "poke:Pokemon (포켓몬)", "poke:pokemon-25 (피카츄)"]
+      },
+      "validation": {
+        "kind": "exact-match",
+        "expected": ["poke:pokemon-25 (피카츄)", "poke:hasType (타입을_가짐)", "poke:ElectricType (전기타입)"],
+        "partialCredit": false
+      },
+      "hints": [
+        "주어는 사실의 주인공이에요 — 누가 타입을 가지나요?",
+        "술어는 '타입을_가짐' 같은 관계 이름이에요.",
+        "주어=피카츄, 술어=타입을_가짐, 목적어=전기타입."
+      ],
+      "successMessage": "정확해요! 이 한 줄이 데이터의 가장 작은 조각, 트리플이에요.",
+      "relatedConcepts": ["triple", "subject-predicate-object"]
+    },
+    {
+      "id": "ex-04-03",
+      "type": "triple-build",
+      "title": "'피츄가 피카츄로 진화한다'를 트리플로",
+      "prompt": "이번엔 진화 관계예요. 같은 방법으로 드롭다운에서 트리플 한 줄을 만들어 보세요.",
+      "init": {
+        "subjects": ["poke:pokemon-172 (피츄)", "poke:pokemon-25 (피카츄)", "poke:pokemon-26 (라이츄)"],
+        "predicates": ["poke:evolvesTo (진화함)", "poke:hasType (타입을_가짐)", "poke:evolvesFrom (진화_전)"],
+        "objects": ["poke:pokemon-25 (피카츄)", "poke:pokemon-172 (피츄)", "poke:pokemon-26 (라이츄)", "poke:ElectricType (전기타입)"]
+      },
+      "validation": {
+        "kind": "exact-match",
+        "expected": ["poke:pokemon-172 (피츄)", "poke:evolvesTo (진화함)", "poke:pokemon-25 (피카츄)"],
+        "partialCredit": false
+      },
+      "hints": [
+        "'A가 B로 진화한다' 는 A→B 방향이에요.",
+        "주어가 변하기 전(어린 모습), 목적어가 변한 후(자란 모습).",
+        "피츄 → 진화함 → 피카츄."
+      ],
+      "successMessage": "잘 했어요! 방향(주어→목적어)이 핵심이에요. 거꾸로 적으면 다른 사실이 돼요.",
+      "relatedConcepts": ["triple", "directionality"]
+    },
+    {
+      "id": "ex-04-04",
+      "type": "graph-build",
+      "title": "피츄→피카츄→라이츄 진화 사슬을 그래프로",
+      "prompt": "주어진 3개 노드를 '진화함' 엣지로 연결해 진화 사슬을 완성하세요. 화살표 방향을 잘 보세요.",
+      "init": {
+        "givenNodes": [
+          { "id": "poke:pokemon-172", "label": "피츄", "type": "instance" },
+          { "id": "poke:pokemon-25", "label": "피카츄", "type": "instance" },
+          { "id": "poke:pokemon-26", "label": "라이츄", "type": "instance" }
+        ],
+        "givenEdges": [],
+        "palette": {
+          "edges": [
+            { "label": "evolvesTo (진화함)", "kind": "object" },
+            { "label": "hasType (타입을_가짐)", "kind": "object" }
+          ]
+        }
+      },
+      "validation": {
+        "kind": "graph-isomorphism",
+        "expected": {
+          "edges": [
+            { "from": "poke:pokemon-172", "to": "poke:pokemon-25", "label": "evolvesTo (진화함)" },
+            { "from": "poke:pokemon-25", "to": "poke:pokemon-26", "label": "evolvesTo (진화함)" }
+          ]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "엣지 두 개가 필요해요.",
+        "피츄가 가장 어린 모습, 라이츄가 가장 자란 모습이에요.",
+        "피츄 → 피카츄, 피카츄 → 라이츄."
+      ],
+      "successMessage": "완성! 두 트리플로 진화 사슬 전체가 표현됐어요.",
+      "relatedConcepts": ["triple", "directionality"]
+    }
+  ]
+}

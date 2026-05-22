@@ -1,0 +1,72 @@
+{
+  "id": "ch01",
+  "title": "온톨로지란 무엇인가?",
+  "nodes": [
+    {
+      "id": "poke:Pokemon",
+      "label": "포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:pokemon-25",
+      "label": "피카츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-4",
+      "label": "파이리",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-7",
+      "label": "꼬부기",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1",
+      "label": "이상해씨",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-133",
+      "label": "이브이",
+      "type": "instance"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:Pokemon",
+      "label": "is-a",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-4",
+      "target": "poke:Pokemon",
+      "label": "is-a",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-7",
+      "target": "poke:Pokemon",
+      "label": "is-a",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:Pokemon",
+      "label": "is-a",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:Pokemon",
+      "label": "is-a",
+      "kind": "is-a"
+    }
+  ],
+  "highlight": [
+    "poke:Pokemon"
+  ],
+  "layoutHint": "breadthfirst"
+}

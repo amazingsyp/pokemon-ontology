@@ -1,0 +1,131 @@
+{
+  "chapterId": "ch11",
+  "exercises": [
+    {
+      "id": "ex-11-01",
+      "type": "quiz",
+      "title": "FILTER vs OPTIONAL",
+      "prompt": "다음 SPARQL 기능과 그 역할의 짝 중 옳은 것은?",
+      "init": {
+        "choices": [
+          "FILTER = 결측값을 채워준다, OPTIONAL = 결과를 정렬한다",
+          "FILTER = 수치/문자 조건을 추가한다, OPTIONAL = 있으면 가져오고 없으면 비워둔다",
+          "FILTER = 그룹화한다, OPTIONAL = 합계를 낸다",
+          "FILTER = 데이터를 삭제한다, OPTIONAL = 데이터를 추가한다"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "FILTER는 추가 조건, OPTIONAL은 결측 허용.",
+        "엑셀의 '필터'와 'left join'의 차이와 비슷해요.",
+        "두 번째 선택지를 보세요."
+      ],
+      "successMessage": "맞아요! FILTER는 조건, OPTIONAL은 '있으면 채워주기'.",
+      "relatedConcepts": ["sparql-filter", "sparql-optional"]
+    },
+    {
+      "id": "ex-11-02",
+      "type": "query-build",
+      "title": "HP가 100 이상인 포켓몬 찾기",
+      "prompt": "FILTER로 'HP ≥ 100'인 포켓몬을 찾는 쿼리를 완성하세요. ?prop과 FILTER 조건을 골라 주세요.",
+      "init": {
+        "queryShape": "SELECT ?p ?hp WHERE { ?p ?prop ?hp . FILTER(?cmp) }",
+        "options": {
+          "?prop": ["poke:hp", "poke:attack", "poke:height"],
+          "?cmp": ["?hp >= 100", "?hp < 100", "?hp = 100", "?hp != 100"]
+        }
+      },
+      "validation": {
+        "kind": "query-match",
+        "expected": { "?prop": "poke:hp", "?cmp": "?hp >= 100" },
+        "partialCredit": false
+      },
+      "hints": [
+        "'HP'는 어떤 속성으로 적혀 있을까요?",
+        "'≥' 는 SPARQL에서 >= 로 적어요.",
+        "?prop=poke:hp, ?cmp=?hp >= 100."
+      ],
+      "successMessage": "정답! 이 쿼리는 라프라스(130), 이브이 진화형들 등 HP 100 이상을 모두 골라내요.",
+      "relatedConcepts": ["sparql-filter"]
+    },
+    {
+      "id": "ex-11-03",
+      "type": "query-build",
+      "title": "진화 전이 있으면 함께 보여주기",
+      "prompt": "OPTIONAL로 '포켓몬과 그 진화 전(있으면)'을 함께 보여주는 쿼리를 완성하세요.",
+      "init": {
+        "queryShape": "SELECT ?p ?pre WHERE { ?p rdf:type poke:Pokemon . OPTIONAL { ?p ?prop ?pre } }",
+        "options": {
+          "?prop": ["poke:evolvesFrom", "poke:evolvesTo", "poke:hasType", "rdfs:subClassOf"]
+        }
+      },
+      "validation": {
+        "kind": "query-match",
+        "expected": { "?prop": "poke:evolvesFrom" },
+        "partialCredit": false
+      },
+      "hints": [
+        "'진화 전'은 어떤 속성이었죠? (ch08에서 다뤘어요)",
+        "evolvesFrom 속성을 사용해요.",
+        "?prop=poke:evolvesFrom."
+      ],
+      "successMessage": "맞아요! 진화 전이 없는 포켓몬(예: 피츄·이상해씨)은 ?pre 자리가 비어 나와요.",
+      "relatedConcepts": ["sparql-optional"]
+    },
+    {
+      "id": "ex-11-04",
+      "type": "query-build",
+      "title": "세대별 평균 공격력 (GROUP BY)",
+      "prompt": "세대별로 그룹핑해서 평균 공격력을 구하는 쿼리예요. ?prop과 ?agg를 골라 완성하세요.",
+      "init": {
+        "queryShape": "SELECT ?gen (?agg AS ?avgAtk) WHERE { ?p poke:fromGeneration ?gen . ?p ?prop ?atk } GROUP BY ?gen",
+        "options": {
+          "?prop": ["poke:attack", "poke:hp", "poke:defense", "poke:speed"],
+          "?agg": ["AVG(?atk)", "COUNT(?atk)", "SUM(?atk)", "MIN(?atk)"]
+        }
+      },
+      "validation": {
+        "kind": "query-match",
+        "expected": { "?prop": "poke:attack", "?agg": "AVG(?atk)" },
+        "partialCredit": false
+      },
+      "hints": [
+        "'공격력'은 attack 속성이에요.",
+        "'평균'은 AVG 함수를 써요.",
+        "?prop=poke:attack, ?agg=AVG(?atk)."
+      ],
+      "successMessage": "정답! 결과는 세대별 평균 공격력 표예요(예: gen-1, gen-2, ...).",
+      "relatedConcepts": ["sparql-aggregation"]
+    },
+    {
+      "id": "ex-11-05",
+      "type": "quiz",
+      "title": "두 패턴 JOIN하기",
+      "prompt": "'전기 타입이면서 1세대인 포켓몬'을 찾는 SPARQL은 어떻게 표현될까요?",
+      "init": {
+        "choices": [
+          "두 패턴을 각각 다른 변수로 적는다 (?p1, ?p2)",
+          "두 패턴에서 같은 변수 ?p를 공유한다",
+          "FILTER로만 가능하다",
+          "UNION으로 둘을 묶는다"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "WHERE 안에 두 트리플 패턴을 적되, 어떻게 '같은 포켓몬'을 가리키게 할까요?",
+        "변수 이름을 같게 쓰면 자동으로 매칭(JOIN)돼요.",
+        "{ ?p poke:hasType poke:ElectricType . ?p poke:fromGeneration poke:gen-1 }"
+      ],
+      "successMessage": "정확! 같은 변수를 공유하면 두 조건을 동시에 만족하는 것만 남아요(JOIN).",
+      "relatedConcepts": ["sparql", "query-variable"]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "chapterId": "ch06",
+  "exercises": [
+    {
+      "id": "ex-06-01",
+      "type": "quiz",
+      "title": "리자몽의 타입은?",
+      "prompt": "리자몽의 타입을 가장 정확하게 나타낸 것은?",
+      "init": {
+        "choices": [
+          "불꽃 타입 단일",
+          "비행 타입 단일",
+          "불꽃 타입이면서 동시에 비행 타입 (듀얼타입)",
+          "어떤 타입에도 속하지 않음"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [2],
+        "partialCredit": false
+      },
+      "hints": [
+        "리자몽이 가진 타입이 한 개일까요, 두 개일까요?",
+        "도감을 보면 두 가지 타입이 적혀 있어요.",
+        "불꽃 + 비행 — 두 클래스에 동시에 속해요."
+      ],
+      "successMessage": "맞아요! 리자몽은 두 클래스의 멤버 — 이게 다중 상속이에요.",
+      "relatedConcepts": ["multiple-inheritance", "class-intersection"]
+    },
+    {
+      "id": "ex-06-02",
+      "type": "drag-classify",
+      "title": "듀얼타입 포켓몬을 두 박스에 넣기",
+      "prompt": "각 포켓몬을 자신이 속한 타입 박스 '모두'에 드래그하세요. 듀얼타입은 두 박스에 들어갑니다.",
+      "init": {
+        "items": [
+          { "id": "poke:pokemon-6", "label": "리자몽" },
+          { "id": "poke:pokemon-1", "label": "이상해씨" },
+          { "id": "poke:pokemon-130", "label": "갸라도스" },
+          { "id": "poke:pokemon-131", "label": "라프라스" },
+          { "id": "poke:pokemon-94", "label": "팬텀" }
+        ],
+        "buckets": [
+          { "id": "poke:FireType", "label": "불꽃" },
+          { "id": "poke:FlyingType", "label": "비행" },
+          { "id": "poke:GrassType", "label": "풀" },
+          { "id": "poke:PoisonType", "label": "독" },
+          { "id": "poke:WaterType", "label": "물" },
+          { "id": "poke:IceType", "label": "얼음" },
+          { "id": "poke:GhostType", "label": "고스트" }
+        ]
+      },
+      "validation": {
+        "kind": "bucket-assignment",
+        "expected": {
+          "poke:pokemon-6": ["poke:FireType", "poke:FlyingType"],
+          "poke:pokemon-1": ["poke:GrassType", "poke:PoisonType"],
+          "poke:pokemon-130": ["poke:WaterType", "poke:FlyingType"],
+          "poke:pokemon-131": ["poke:WaterType", "poke:IceType"],
+          "poke:pokemon-94": ["poke:GhostType", "poke:PoisonType"]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "각 포켓몬은 정확히 두 타입을 가져요.",
+        "리자몽=불꽃·비행, 이상해씨=풀·독, 라프라스=물·얼음을 떠올려요.",
+        "팬텀은 고스트·독, 갸라도스는 물·비행이에요."
+      ],
+      "successMessage": "잘 했어요! 한 인스턴스가 두 클래스의 멤버 — 이게 다중 상속의 본질이에요.",
+      "relatedConcepts": ["multiple-inheritance"]
+    },
+    {
+      "id": "ex-06-03",
+      "type": "graph-build",
+      "title": "리자몽을 두 클래스에 동시 연결",
+      "prompt": "리자몽이 '불꽃타입 포켓몬'과 '비행타입 포켓몬' 두 클래스의 인스턴스가 되도록 type 엣지 2개를 그리세요. 그리고 두 클래스를 '포켓몬'의 서브클래스로 잇습니다.",
+      "init": {
+        "givenNodes": [
+          { "id": "poke:Pokemon", "label": "포켓몬", "type": "class" },
+          { "id": "poke:FireTypePokemon", "label": "불꽃타입 포켓몬", "type": "class" },
+          { "id": "poke:FlyingTypePokemon", "label": "비행타입 포켓몬", "type": "class" },
+          { "id": "poke:pokemon-6", "label": "리자몽", "type": "instance" }
+        ],
+        "givenEdges": [],
+        "palette": {
+          "edges": [
+            { "label": "subClassOf", "kind": "is-a" },
+            { "label": "type", "kind": "is-a" }
+          ]
+        }
+      },
+      "validation": {
+        "kind": "graph-isomorphism",
+        "expected": {
+          "edges": [
+            { "from": "poke:FireTypePokemon", "to": "poke:Pokemon", "label": "subClassOf" },
+            { "from": "poke:FlyingTypePokemon", "to": "poke:Pokemon", "label": "subClassOf" },
+            { "from": "poke:pokemon-6", "to": "poke:FireTypePokemon", "label": "type" },
+            { "from": "poke:pokemon-6", "to": "poke:FlyingTypePokemon", "label": "type" }
+          ]
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "엣지가 4개 필요해요. subClassOf 2개 + type 2개.",
+        "리자몽에서 나가는 type 화살표가 두 클래스로 갈라져요.",
+        "두 타입 클래스는 모두 '포켓몬'의 서브클래스예요."
+      ],
+      "successMessage": "완성! 리자몽은 두 클래스 모두의 인스턴스 — 다중 상속의 표준 그림이에요.",
+      "relatedConcepts": ["multiple-inheritance", "class-intersection"]
+    },
+    {
+      "id": "ex-06-04",
+      "type": "quiz",
+      "title": "교집합 클래스의 의미",
+      "prompt": "'불꽃 ∩ 비행' 교집합 클래스에 들어가는 포켓몬은? (여러 마리 중 옳은 설명)",
+      "init": {
+        "choices": [
+          "불꽃 타입이거나 비행 타입인 모든 포켓몬",
+          "불꽃 타입이면서 동시에 비행 타입인 포켓몬 (예: 리자몽, 파이어)",
+          "불꽃 타입이지만 비행 타입은 아닌 포켓몬",
+          "포켓몬 전체"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "'∩' 기호는 '둘 다 만족'이라는 뜻이에요.",
+        "둘 중 하나가 아니라 둘 모두에 속해야 해요.",
+        "리자몽과 파이어가 대표적인 예에요."
+      ],
+      "successMessage": "맞아요! 교집합은 두 조건을 동시에 만족하는 좁은 클래스예요.",
+      "relatedConcepts": ["class-intersection", "multiple-inheritance"]
+    }
+  ]
+}

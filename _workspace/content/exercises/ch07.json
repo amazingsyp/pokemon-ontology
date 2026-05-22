@@ -1,0 +1,117 @@
+{
+  "chapterId": "ch07",
+  "exercises": [
+    {
+      "id": "ex-07-01",
+      "type": "quiz",
+      "title": "도메인과 레인지란?",
+      "prompt": "속성 '진화함(evolvesTo)'의 도메인과 레인지는 무엇일까요?",
+      "init": {
+        "choices": [
+          "도메인=숫자, 레인지=숫자",
+          "도메인=포켓몬, 레인지=포켓몬",
+          "도메인=타입, 레인지=타입",
+          "도메인=포켓몬, 레인지=타입"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [1],
+        "partialCredit": false
+      },
+      "hints": [
+        "도메인=주어 자리에 올 수 있는 종류, 레인지=목적어 자리에 올 수 있는 종류.",
+        "'A 진화함 B'에서 A와 B 모두 포켓몬이에요.",
+        "둘 다 같은 답이에요."
+      ],
+      "successMessage": "맞아요! 진화함의 양쪽 자리 모두 '포켓몬'이에요.",
+      "relatedConcepts": ["domain", "range"]
+    },
+    {
+      "id": "ex-07-02",
+      "type": "matching",
+      "title": "속성과 도메인·레인지 짝짓기",
+      "prompt": "다음 속성들을 올바른 (도메인, 레인지) 쌍과 매칭하세요.",
+      "init": {
+        "left": [
+          { "id": "poke:hasType", "label": "hasType (타입을_가짐)" },
+          { "id": "poke:evolvesTo", "label": "evolvesTo (진화함)" },
+          { "id": "poke:livesIn", "label": "livesIn (서식지에_삼)" },
+          { "id": "poke:height", "label": "height (키)" }
+        ],
+        "right": [
+          { "id": "Pokemon-Type", "label": "(포켓몬, 타입)" },
+          { "id": "Pokemon-Pokemon", "label": "(포켓몬, 포켓몬)" },
+          { "id": "Pokemon-Habitat", "label": "(포켓몬, 서식지)" },
+          { "id": "Pokemon-decimal", "label": "(포켓몬, 소수)" }
+        ]
+      },
+      "validation": {
+        "kind": "matching-pairs",
+        "expected": {
+          "poke:hasType": "Pokemon-Type",
+          "poke:evolvesTo": "Pokemon-Pokemon",
+          "poke:livesIn": "Pokemon-Habitat",
+          "poke:height": "Pokemon-decimal"
+        },
+        "partialCredit": true
+      },
+      "hints": [
+        "각 속성에서 '누가 → 무엇으로' 향하는지 떠올려 보세요.",
+        "hasType는 포켓몬이 타입을 가리키고, height는 포켓몬의 키 값이에요.",
+        "키는 데이터 속성이라서 레인지가 '소수(decimal)'예요."
+      ],
+      "successMessage": "잘 했어요! 각 속성은 자기만의 '주어 자리'와 '목적어 자리'를 가져요.",
+      "relatedConcepts": ["domain", "range", "type-constraint"]
+    },
+    {
+      "id": "ex-07-03",
+      "type": "quiz",
+      "title": "어색한 트리플 잡기",
+      "prompt": "다음 트리플 중 도메인·레인지를 위반한 '어색한' 트리플은?",
+      "init": {
+        "choices": [
+          "피카츄 — hasType — 전기타입",
+          "피카츄 — evolvesTo — 라이츄",
+          "피카츄 — evolvesTo — 0.4m",
+          "피카츄 — height — 0.4"
+        ]
+      },
+      "validation": {
+        "kind": "select-correct",
+        "expected": [2],
+        "partialCredit": false
+      },
+      "hints": [
+        "evolvesTo의 레인지는 무엇이었죠?",
+        "evolvesTo의 목적어 자리에는 포켓몬이 와야 해요. 키(숫자)는 안 돼요.",
+        "세 번째 선택지를 보세요 — 진화의 결과가 '0.4m'일 수는 없죠."
+      ],
+      "successMessage": "정답! evolvesTo는 포켓몬 → 포켓몬이어야 해요. 키(0.4m)는 레인지를 위반해요.",
+      "relatedConcepts": ["domain", "range", "type-constraint"]
+    },
+    {
+      "id": "ex-07-04",
+      "type": "triple-build",
+      "title": "도메인·레인지에 맞는 트리플 만들기",
+      "prompt": "주어진 드롭다운에서 '꼬부기는 어니부기로 진화한다'를 올바른 도메인·레인지로 트리플로 만드세요. 도메인 위반 선택지가 섞여 있으니 주의!",
+      "init": {
+        "subjects": ["poke:pokemon-7 (꼬부기)", "poke:WaterType (물타입)", "\"0.5\"^^xsd:decimal (0.5m)"],
+        "predicates": ["poke:evolvesTo (진화함)", "poke:hasType (타입을_가짐)", "poke:height (키)"],
+        "objects": ["poke:pokemon-8 (어니부기)", "poke:WaterType (물타입)", "\"0.5\"^^xsd:decimal (0.5m)"]
+      },
+      "validation": {
+        "kind": "exact-match",
+        "expected": ["poke:pokemon-7 (꼬부기)", "poke:evolvesTo (진화함)", "poke:pokemon-8 (어니부기)"],
+        "partialCredit": false
+      },
+      "hints": [
+        "evolvesTo의 도메인·레인지 모두 포켓몬이에요.",
+        "주어와 목적어 자리에 포켓몬을 골라야 해요. 타입이나 숫자는 안 돼요.",
+        "꼬부기 → 진화함 → 어니부기."
+      ],
+      "successMessage": "정확! 도메인·레인지가 모두 충족된 트리플이에요.",
+      "relatedConcepts": ["domain", "range", "triple"]
+    }
+  ]
+}

@@ -1,0 +1,526 @@
+{
+  "classes": [
+    {
+      "iri": "poke:Pokemon",
+      "koLabel": "포켓몬",
+      "parent": null,
+      "koDescription": "포켓몬 세계의 모든 생물을 가리키는 최상위 클래스. 인스턴스는 도감번호 1~1025의 각 종이다."
+    },
+    {
+      "iri": "poke:Type",
+      "koLabel": "타입",
+      "parent": null,
+      "koDescription": "포켓몬과 기술의 18가지 속성 분류(메타클래스). 각 타입(FireType, WaterType 등)이 인스턴스다."
+    },
+    {
+      "iri": "poke:LegendaryPokemon",
+      "koLabel": "전설의 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (isLegendary value true)",
+      "koExplanation": "전설의 포켓몬은 '포켓몬'이면서 동시에 isLegendary가 true인 개체예요."
+    },
+    {
+      "iri": "poke:MythicalPokemon",
+      "koLabel": "환상의 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (isMythical value true)",
+      "koExplanation": "환상의 포켓몬은 isMythical이 true로 표시된 매우 희귀한 포켓몬이에요."
+    },
+    {
+      "iri": "poke:DualTypePokemon",
+      "koLabel": "듀얼 타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType min 2 Type)",
+      "koExplanation": "타입을 2개 이상 가진 포켓몬이에요. 예: 리자몽(불꽃·비행)."
+    },
+    {
+      "iri": "poke:Move",
+      "koLabel": "기술",
+      "parent": null,
+      "koDescription": "포켓몬이 사용하는 기술. 분류에 따라 물리/특수/변화 기술로 나뉘어요."
+    },
+    {
+      "iri": "poke:PhysicalMove",
+      "koLabel": "물리 기술",
+      "parent": "poke:Move",
+      "owlDefinition": "Move ⊓ (damageClass value \"physical\")",
+      "koExplanation": "직접 부딪쳐 데미지를 주는 기술. damageClass가 physical이에요."
+    },
+    {
+      "iri": "poke:SpecialMove",
+      "koLabel": "특수 기술",
+      "parent": "poke:Move",
+      "owlDefinition": "Move ⊓ (damageClass value \"special\")",
+      "koExplanation": "에너지·파동으로 데미지를 주는 기술. damageClass가 special이에요."
+    },
+    {
+      "iri": "poke:StatusMove",
+      "koLabel": "변화 기술",
+      "parent": "poke:Move",
+      "owlDefinition": "Move ⊓ (damageClass value \"status\")",
+      "koExplanation": "데미지 대신 상태이상이나 능력 변화를 주는 기술이에요."
+    },
+    {
+      "iri": "poke:Ability",
+      "koLabel": "특성",
+      "parent": null,
+      "koDescription": "포켓몬이 가지고 있는 고유 능력 (예: 정전기, 심록)."
+    },
+    {
+      "iri": "poke:Habitat",
+      "koLabel": "서식지",
+      "parent": null,
+      "koDescription": "포켓몬이 주로 발견되는 환경 (숲, 바다, 동굴 등)."
+    },
+    {
+      "iri": "poke:Generation",
+      "koLabel": "세대",
+      "parent": null,
+      "koDescription": "포켓몬이 처음 등장한 게임 세대 (1세대 ~ 9세대)."
+    },
+    {
+      "iri": "poke:EggGroup",
+      "koLabel": "알 그룹",
+      "parent": null,
+      "koDescription": "교배 가능한 포켓몬들의 분류 그룹."
+    },
+    {
+      "iri": "poke:EvolutionTrigger",
+      "koLabel": "진화 조건",
+      "parent": null,
+      "koDescription": "진화가 발생하는 방식(레벨업, 도구 사용, 친밀도 등)."
+    },
+    {
+      "iri": "poke:BugType",
+      "koLabel": "벌레타입",
+      "parent": "poke:Type",
+      "koDescription": "벌레 속성. 벌레타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:DarkType",
+      "koLabel": "악타입",
+      "parent": "poke:Type",
+      "koDescription": "악 속성. 악타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:DragonType",
+      "koLabel": "드래곤타입",
+      "parent": "poke:Type",
+      "koDescription": "드래곤 속성. 드래곤타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:ElectricType",
+      "koLabel": "전기타입",
+      "parent": "poke:Type",
+      "koDescription": "전기 속성. 전기타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:FairyType",
+      "koLabel": "페어리타입",
+      "parent": "poke:Type",
+      "koDescription": "페어리 속성. 페어리타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:FightingType",
+      "koLabel": "격투타입",
+      "parent": "poke:Type",
+      "koDescription": "격투 속성. 격투타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:FireType",
+      "koLabel": "불꽃타입",
+      "parent": "poke:Type",
+      "koDescription": "불꽃 속성. 불꽃타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:FlyingType",
+      "koLabel": "비행타입",
+      "parent": "poke:Type",
+      "koDescription": "비행 속성. 비행타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:GhostType",
+      "koLabel": "고스트타입",
+      "parent": "poke:Type",
+      "koDescription": "고스트 속성. 고스트타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:GrassType",
+      "koLabel": "풀타입",
+      "parent": "poke:Type",
+      "koDescription": "풀 속성. 풀타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:GroundType",
+      "koLabel": "땅타입",
+      "parent": "poke:Type",
+      "koDescription": "땅 속성. 땅타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:IceType",
+      "koLabel": "얼음타입",
+      "parent": "poke:Type",
+      "koDescription": "얼음 속성. 얼음타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:NormalType",
+      "koLabel": "노말타입",
+      "parent": "poke:Type",
+      "koDescription": "노말 속성. 노말타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:PoisonType",
+      "koLabel": "독타입",
+      "parent": "poke:Type",
+      "koDescription": "독 속성. 독타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:PsychicType",
+      "koLabel": "에스퍼타입",
+      "parent": "poke:Type",
+      "koDescription": "에스퍼 속성. 에스퍼타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:RockType",
+      "koLabel": "바위타입",
+      "parent": "poke:Type",
+      "koDescription": "바위 속성. 바위타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:SteelType",
+      "koLabel": "강철타입",
+      "parent": "poke:Type",
+      "koDescription": "강철 속성. 강철타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:WaterType",
+      "koLabel": "물타입",
+      "parent": "poke:Type",
+      "koDescription": "물 속성. 물타입 포켓몬과 기술의 분류."
+    },
+    {
+      "iri": "poke:BugTypePokemon",
+      "koLabel": "벌레타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:BugType)",
+      "koExplanation": "벌레 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:DarkTypePokemon",
+      "koLabel": "악타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:DarkType)",
+      "koExplanation": "악 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:DragonTypePokemon",
+      "koLabel": "드래곤타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:DragonType)",
+      "koExplanation": "드래곤 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:ElectricTypePokemon",
+      "koLabel": "전기타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:ElectricType)",
+      "koExplanation": "전기 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:FairyTypePokemon",
+      "koLabel": "페어리타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:FairyType)",
+      "koExplanation": "페어리 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:FightingTypePokemon",
+      "koLabel": "격투타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:FightingType)",
+      "koExplanation": "격투 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:FireTypePokemon",
+      "koLabel": "불꽃타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:FireType)",
+      "koExplanation": "불꽃 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:FlyingTypePokemon",
+      "koLabel": "비행타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:FlyingType)",
+      "koExplanation": "비행 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:GhostTypePokemon",
+      "koLabel": "고스트타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:GhostType)",
+      "koExplanation": "고스트 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:GrassTypePokemon",
+      "koLabel": "풀타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:GrassType)",
+      "koExplanation": "풀 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:GroundTypePokemon",
+      "koLabel": "땅타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:GroundType)",
+      "koExplanation": "땅 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:IceTypePokemon",
+      "koLabel": "얼음타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:IceType)",
+      "koExplanation": "얼음 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:NormalTypePokemon",
+      "koLabel": "노말타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:NormalType)",
+      "koExplanation": "노말 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:PoisonTypePokemon",
+      "koLabel": "독타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:PoisonType)",
+      "koExplanation": "독 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:PsychicTypePokemon",
+      "koLabel": "에스퍼타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:PsychicType)",
+      "koExplanation": "에스퍼 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:RockTypePokemon",
+      "koLabel": "바위타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:RockType)",
+      "koExplanation": "바위 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:SteelTypePokemon",
+      "koLabel": "강철타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:SteelType)",
+      "koExplanation": "강철 타입을 가진 모든 포켓몬의 집합이에요."
+    },
+    {
+      "iri": "poke:WaterTypePokemon",
+      "koLabel": "물타입 포켓몬",
+      "parent": "poke:Pokemon",
+      "owlDefinition": "Pokemon ⊓ (hasType value poke:WaterType)",
+      "koExplanation": "물 타입을 가진 모든 포켓몬의 집합이에요."
+    }
+  ],
+  "properties": [
+    {
+      "iri": "poke:hasType",
+      "koLabel": "타입을_가짐",
+      "kind": "object",
+      "domain": "poke:Pokemon",
+      "range": "poke:Type",
+      "koDescription": "포켓몬이 가진 타입을 가리키는 객체 속성. 1~2개를 가질 수 있어요."
+    },
+    {
+      "iri": "poke:evolvesTo",
+      "koLabel": "진화함",
+      "kind": "object",
+      "domain": "poke:Pokemon",
+      "range": "poke:Pokemon",
+      "inverse": "poke:evolvesFrom",
+      "koDescription": "어떤 포켓몬이 어떤 포켓몬으로 진화하는지. 추이적 관계(transitive)로 확장 가능해요."
+    },
+    {
+      "iri": "poke:evolvesFrom",
+      "koLabel": "진화_전",
+      "kind": "object",
+      "domain": "poke:Pokemon",
+      "range": "poke:Pokemon",
+      "inverse": "poke:evolvesTo",
+      "koDescription": "evolvesTo의 역관계. 자동으로 추론됩니다."
+    },
+    {
+      "iri": "poke:evolvesToEventually",
+      "koLabel": "결국_진화함",
+      "kind": "object",
+      "domain": "poke:Pokemon",
+      "range": "poke:Pokemon",
+      "koDescription": "evolvesTo의 추이적(transitive) 닫힘. 진화 사슬 끝까지 따라간 결과예요."
+    },
+    {
+      "iri": "poke:hasAbility",
+      "koLabel": "특성을_가짐",
+      "kind": "object",
+      "domain": "poke:Pokemon",
+      "range": "poke:Ability",
+      "koDescription": "포켓몬이 가질 수 있는 특성."
+    },
+    {
+      "iri": "poke:livesIn",
+      "koLabel": "서식지에_삼",
+      "kind": "object",
+      "domain": "poke:Pokemon",
+      "range": "poke:Habitat",
+      "koDescription": "포켓몬의 주된 서식지."
+    },
+    {
+      "iri": "poke:fromGeneration",
+      "koLabel": "소속_세대",
+      "kind": "object",
+      "domain": "poke:Pokemon",
+      "range": "poke:Generation",
+      "koDescription": "포켓몬이 처음 등장한 세대."
+    },
+    {
+      "iri": "poke:hasEggGroup",
+      "koLabel": "알그룹을_가짐",
+      "kind": "object",
+      "domain": "poke:Pokemon",
+      "range": "poke:EggGroup",
+      "koDescription": "포켓몬이 속한 알 그룹."
+    },
+    {
+      "iri": "poke:hasMove",
+      "koLabel": "기술을_가짐",
+      "kind": "object",
+      "domain": "poke:Pokemon",
+      "range": "poke:Move",
+      "koDescription": "포켓몬이 배울 수 있는 기술 (대표 4개로 학습용 데이터에서는 제한)."
+    },
+    {
+      "iri": "poke:strongAgainst",
+      "koLabel": "효과_뛰어남",
+      "kind": "object",
+      "domain": "poke:Type",
+      "range": "poke:Type",
+      "inverse": "poke:weakAgainst",
+      "koDescription": "한 타입이 다른 타입에 효과가 뛰어남(2배 데미지)."
+    },
+    {
+      "iri": "poke:weakAgainst",
+      "koLabel": "효과_별로",
+      "kind": "object",
+      "domain": "poke:Type",
+      "range": "poke:Type",
+      "inverse": "poke:strongAgainst",
+      "koDescription": "strongAgainst의 역관계."
+    },
+    {
+      "iri": "poke:immuneTo",
+      "koLabel": "무효_받음",
+      "kind": "object",
+      "domain": "poke:Type",
+      "range": "poke:Type",
+      "koDescription": "특정 타입의 공격을 완전히 받지 않음(0배 데미지)."
+    },
+    {
+      "iri": "poke:hasMoveType",
+      "koLabel": "기술의_타입",
+      "kind": "object",
+      "domain": "poke:Move",
+      "range": "poke:Type",
+      "koDescription": "기술이 어떤 타입에 속하는지."
+    },
+    {
+      "iri": "poke:dexNumber",
+      "koLabel": "도감번호",
+      "kind": "data",
+      "domain": "poke:Pokemon",
+      "range": "xsd:integer",
+      "koDescription": "전국 도감 번호 (1~1025)."
+    },
+    {
+      "iri": "poke:height",
+      "koLabel": "키",
+      "kind": "data",
+      "domain": "poke:Pokemon",
+      "range": "xsd:decimal",
+      "koDescription": "포켓몬의 키 (미터 단위)."
+    },
+    {
+      "iri": "poke:weight",
+      "koLabel": "몸무게",
+      "kind": "data",
+      "domain": "poke:Pokemon",
+      "range": "xsd:decimal",
+      "koDescription": "포켓몬의 몸무게 (킬로그램 단위)."
+    },
+    {
+      "iri": "poke:hp",
+      "koLabel": "HP",
+      "kind": "data",
+      "domain": "poke:Pokemon",
+      "range": "xsd:integer",
+      "koDescription": "체력 종족값."
+    },
+    {
+      "iri": "poke:attack",
+      "koLabel": "공격",
+      "kind": "data",
+      "domain": "poke:Pokemon",
+      "range": "xsd:integer",
+      "koDescription": "물리 공격 종족값."
+    },
+    {
+      "iri": "poke:defense",
+      "koLabel": "방어",
+      "kind": "data",
+      "domain": "poke:Pokemon",
+      "range": "xsd:integer",
+      "koDescription": "물리 방어 종족값."
+    },
+    {
+      "iri": "poke:spAttack",
+      "koLabel": "특수공격",
+      "kind": "data",
+      "domain": "poke:Pokemon",
+      "range": "xsd:integer",
+      "koDescription": "특수 공격 종족값."
+    },
+    {
+      "iri": "poke:spDefense",
+      "koLabel": "특수방어",
+      "kind": "data",
+      "domain": "poke:Pokemon",
+      "range": "xsd:integer",
+      "koDescription": "특수 방어 종족값."
+    },
+    {
+      "iri": "poke:speed",
+      "koLabel": "스피드",
+      "kind": "data",
+      "domain": "poke:Pokemon",
+      "range": "xsd:integer",
+      "koDescription": "스피드 종족값."
+    },
+    {
+      "iri": "poke:isLegendary",
+      "koLabel": "전설여부",
+      "kind": "data",
+      "domain": "poke:Pokemon",
+      "range": "xsd:boolean",
+      "koDescription": "전설의 포켓몬인지 여부."
+    },
+    {
+      "iri": "poke:isMythical",
+      "koLabel": "환상여부",
+      "kind": "data",
+      "domain": "poke:Pokemon",
+      "range": "xsd:boolean",
+      "koDescription": "환상의 포켓몬인지 여부."
+    }
+  ]
+}

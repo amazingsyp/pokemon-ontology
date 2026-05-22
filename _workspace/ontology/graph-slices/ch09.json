@@ -1,0 +1,144 @@
+{
+  "id": "ch09",
+  "title": "RDF와 Turtle",
+  "nodes": [
+    {
+      "id": "poke:Pokemon",
+      "label": "포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:ElectricType",
+      "label": "전기타입",
+      "type": "class"
+    },
+    {
+      "id": "poke:GrassType",
+      "label": "풀타입",
+      "type": "class"
+    },
+    {
+      "id": "poke:PoisonType",
+      "label": "독타입",
+      "type": "class"
+    },
+    {
+      "id": "poke:pokemon-25",
+      "label": "피카츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-26",
+      "label": "라이츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-172",
+      "label": "피츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1",
+      "label": "이상해씨",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-2",
+      "label": "이상해풀",
+      "type": "instance"
+    },
+    {
+      "id": "lit:25:dex",
+      "label": "25",
+      "type": "literal"
+    },
+    {
+      "id": "lit:25:h",
+      "label": "0.4",
+      "type": "literal"
+    },
+    {
+      "id": "lit:25:hp",
+      "label": "35",
+      "type": "literal"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:Pokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-26",
+      "target": "poke:Pokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-26",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-172",
+      "target": "poke:pokemon-25",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:pokemon-26",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:GrassType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:PoisonType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1",
+      "target": "poke:pokemon-2",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "lit:25:dex",
+      "label": "dexNumber",
+      "kind": "data"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "lit:25:h",
+      "label": "height",
+      "kind": "data"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "lit:25:hp",
+      "label": "hp",
+      "kind": "data"
+    }
+  ],
+  "highlight": [
+    "poke:pokemon-25"
+  ],
+  "layoutHint": "cose"
+}

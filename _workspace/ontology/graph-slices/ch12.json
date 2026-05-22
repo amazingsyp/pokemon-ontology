@@ -1,0 +1,196 @@
+{
+  "id": "ch12",
+  "title": "OWL과 표현력",
+  "nodes": [
+    {
+      "id": "poke:Pokemon",
+      "label": "포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:LegendaryPokemon",
+      "label": "전설의 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:MythicalPokemon",
+      "label": "환상의 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:DualTypePokemon",
+      "label": "듀얼 타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "lit:isLegendary:true",
+      "label": "isLegendary=true",
+      "type": "literal"
+    },
+    {
+      "id": "poke:pokemon-144",
+      "label": "프리져",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-145",
+      "label": "썬더",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-146",
+      "label": "파이어",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-150",
+      "label": "뮤츠",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-151",
+      "label": "뮤",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-6",
+      "label": "리자몽",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-130",
+      "label": "갸라도스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-149",
+      "label": "망나뇽",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-248",
+      "label": "마기라스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-384",
+      "label": "레쿠쟈",
+      "type": "instance"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:LegendaryPokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:MythicalPokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:DualTypePokemon",
+      "target": "poke:Pokemon",
+      "label": "subClassOf",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:LegendaryPokemon",
+      "target": "lit:isLegendary:true",
+      "label": "restriction(isLegendary value true)",
+      "kind": "data"
+    },
+    {
+      "source": "poke:pokemon-144",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-144",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-145",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-145",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-146",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-146",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-150",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-151",
+      "target": "poke:MythicalPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-6",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-130",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-149",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-248",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-384",
+      "target": "poke:LegendaryPokemon",
+      "label": "type",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-384",
+      "target": "poke:DualTypePokemon",
+      "label": "type",
+      "kind": "is-a"
+    }
+  ],
+  "highlight": [
+    "poke:LegendaryPokemon",
+    "poke:DualTypePokemon"
+  ],
+  "layoutHint": "dagre"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "ch04",
+  "title": "관계와 트리플",
+  "nodes": [
+    {
+      "id": "poke:pokemon-172",
+      "label": "피츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-25",
+      "label": "피카츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-26",
+      "label": "라이츄",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-133",
+      "label": "이브이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-134",
+      "label": "샤미드",
+      "type": "instance"
+    },
+    {
+      "id": "poke:ElectricType",
+      "label": "전기타입",
+      "type": "class"
+    },
+    {
+      "id": "poke:WaterType",
+      "label": "물타입",
+      "type": "class"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:pokemon-172",
+      "target": "poke:pokemon-25",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:pokemon-26",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-25",
+      "target": "poke:ElectricType",
+      "label": "hasType",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-134",
+      "label": "evolvesTo",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-134",
+      "target": "poke:WaterType",
+      "label": "hasType",
+      "kind": "object"
+    }
+  ],
+  "highlight": [
+    "poke:pokemon-25",
+    "poke:pokemon-26"
+  ],
+  "layoutHint": "dagre"
+}

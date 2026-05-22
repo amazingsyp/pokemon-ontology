@@ -1,0 +1,651 @@
+{
+  "id": "ch11",
+  "title": "SPARQL 심화 - 세대별 강력 포켓몬",
+  "nodes": [
+    {
+      "id": "poke:gen-1",
+      "label": "1세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-2",
+      "label": "2세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-3",
+      "label": "3세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-4",
+      "label": "4세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-5",
+      "label": "5세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-6",
+      "label": "6세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-7",
+      "label": "7세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-8",
+      "label": "8세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:gen-9",
+      "label": "9세대",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-150",
+      "label": "뮤츠",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-149",
+      "label": "망나뇽",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-151",
+      "label": "뮤",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-144",
+      "label": "프리져",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-145",
+      "label": "썬더",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-146",
+      "label": "파이어",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-249",
+      "label": "루기아",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-250",
+      "label": "칠색조",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-248",
+      "label": "마기라스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-251",
+      "label": "세레비",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-243",
+      "label": "라이코",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-244",
+      "label": "앤테이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-384",
+      "label": "레쿠쟈",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-289",
+      "label": "게을킹",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-382",
+      "label": "가이오가",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-383",
+      "label": "그란돈",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-373",
+      "label": "보만다",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-376",
+      "label": "메타그로스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-493",
+      "label": "아르세우스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-483",
+      "label": "디아루가",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-484",
+      "label": "펄기아",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-487",
+      "label": "기라티나",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-486",
+      "label": "레지기가스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-445",
+      "label": "한카리아스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-643",
+      "label": "레시라무",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-644",
+      "label": "제크로무",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-646",
+      "label": "큐레무",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-494",
+      "label": "비크티니",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-635",
+      "label": "삼삼드래",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-645",
+      "label": "랜드로스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-716",
+      "label": "제르네아스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-717",
+      "label": "이벨타르",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-706",
+      "label": "미끄래곤",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-718",
+      "label": "지가르데",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-719",
+      "label": "디안시",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-720",
+      "label": "후파",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-791",
+      "label": "솔가레오",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-792",
+      "label": "루나아라",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-784",
+      "label": "짜랑고우거",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-800",
+      "label": "네크로즈마",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-801",
+      "label": "마기아나",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-802",
+      "label": "마샤도",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-890",
+      "label": "무한다이노",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-888",
+      "label": "자시안",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-889",
+      "label": "자마젠타",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-887",
+      "label": "드래펄트",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-893",
+      "label": "자루도",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-894",
+      "label": "레지에레키",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1007",
+      "label": "코라이돈",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1008",
+      "label": "미라이돈",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-998",
+      "label": "드닐레이브",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1018",
+      "label": "브리두라스",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1025",
+      "label": "복숭악동",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-1005",
+      "label": "고동치는달",
+      "type": "instance"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:pokemon-150",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-149",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-151",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-144",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-145",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-146",
+      "target": "poke:gen-1",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-249",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-250",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-248",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-251",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-243",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-244",
+      "target": "poke:gen-2",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-384",
+      "target": "poke:gen-3",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-289",
+      "target": "poke:gen-3",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-382",
+      "target": "poke:gen-3",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-383",
+      "target": "poke:gen-3",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-373",
+      "target": "poke:gen-3",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-376",
+      "target": "poke:gen-3",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-493",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-483",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-484",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-487",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-486",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-445",
+      "target": "poke:gen-4",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-643",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-644",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-646",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-494",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-635",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-645",
+      "target": "poke:gen-5",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-716",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-717",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-706",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-718",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-719",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-720",
+      "target": "poke:gen-6",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-791",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-792",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-784",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-800",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-801",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-802",
+      "target": "poke:gen-7",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-890",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-888",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-889",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-887",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-893",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-894",
+      "target": "poke:gen-8",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1007",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1008",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-998",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1018",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1025",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-1005",
+      "target": "poke:gen-9",
+      "label": "fromGeneration",
+      "kind": "object"
+    }
+  ],
+  "highlight": [
+    "poke:gen-1"
+  ],
+  "layoutHint": "concentric"
+}

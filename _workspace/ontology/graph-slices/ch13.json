@@ -1,0 +1,262 @@
+{
+  "id": "ch13",
+  "title": "추론 - 이브이의 진화 가족",
+  "nodes": [
+    {
+      "id": "poke:Pokemon",
+      "label": "포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:evolvesTo",
+      "label": "진화함",
+      "type": "class"
+    },
+    {
+      "id": "poke:evolvesFrom",
+      "label": "진화_전 (역관계)",
+      "type": "class"
+    },
+    {
+      "id": "poke:WaterTypePokemon",
+      "label": "물타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:ElectricTypePokemon",
+      "label": "전기타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:FireTypePokemon",
+      "label": "불꽃타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:PsychicTypePokemon",
+      "label": "에스퍼타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:DarkTypePokemon",
+      "label": "악타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:GrassTypePokemon",
+      "label": "풀타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:IceTypePokemon",
+      "label": "얼음타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:FairyTypePokemon",
+      "label": "페어리타입 포켓몬",
+      "type": "class"
+    },
+    {
+      "id": "poke:pokemon-133",
+      "label": "이브이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-134",
+      "label": "샤미드",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-135",
+      "label": "쥬피썬더",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-136",
+      "label": "부스터",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-196",
+      "label": "에브이",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-197",
+      "label": "블래키",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-470",
+      "label": "리피아",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-471",
+      "label": "글레이시아",
+      "type": "instance"
+    },
+    {
+      "id": "poke:pokemon-700",
+      "label": "님피아",
+      "type": "instance"
+    }
+  ],
+  "edges": [
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-134",
+      "label": "evolvesTo (asserted)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-134",
+      "target": "poke:pokemon-133",
+      "label": "evolvesFrom (inferred)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-135",
+      "label": "evolvesTo (asserted)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-135",
+      "target": "poke:pokemon-133",
+      "label": "evolvesFrom (inferred)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-136",
+      "label": "evolvesTo (asserted)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-136",
+      "target": "poke:pokemon-133",
+      "label": "evolvesFrom (inferred)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-196",
+      "label": "evolvesTo (asserted)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-196",
+      "target": "poke:pokemon-133",
+      "label": "evolvesFrom (inferred)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-197",
+      "label": "evolvesTo (asserted)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-197",
+      "target": "poke:pokemon-133",
+      "label": "evolvesFrom (inferred)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-470",
+      "label": "evolvesTo (asserted)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-470",
+      "target": "poke:pokemon-133",
+      "label": "evolvesFrom (inferred)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-471",
+      "label": "evolvesTo (asserted)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-471",
+      "target": "poke:pokemon-133",
+      "label": "evolvesFrom (inferred)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:pokemon-700",
+      "label": "evolvesTo (asserted)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-700",
+      "target": "poke:pokemon-133",
+      "label": "evolvesFrom (inferred)",
+      "kind": "object"
+    },
+    {
+      "source": "poke:pokemon-133",
+      "target": "poke:NormalTypePokemon",
+      "label": "type (inferred)",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-134",
+      "target": "poke:WaterTypePokemon",
+      "label": "type (inferred)",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-135",
+      "target": "poke:ElectricTypePokemon",
+      "label": "type (inferred)",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-136",
+      "target": "poke:FireTypePokemon",
+      "label": "type (inferred)",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-196",
+      "target": "poke:PsychicTypePokemon",
+      "label": "type (inferred)",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-197",
+      "target": "poke:DarkTypePokemon",
+      "label": "type (inferred)",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-470",
+      "target": "poke:GrassTypePokemon",
+      "label": "type (inferred)",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-471",
+      "target": "poke:IceTypePokemon",
+      "label": "type (inferred)",
+      "kind": "is-a"
+    },
+    {
+      "source": "poke:pokemon-700",
+      "target": "poke:FairyTypePokemon",
+      "label": "type (inferred)",
+      "kind": "is-a"
+    }
+  ],
+  "highlight": [
+    "poke:pokemon-133"
+  ],
+  "layoutHint": "breadthfirst"
+}

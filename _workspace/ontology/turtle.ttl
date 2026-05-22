@@ -1,0 +1,144 @@
+@prefix poke: <http://example.org/poke#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ----- 학습용 샘플: 6마리의 포켓몬 트리플을 모은 Turtle 직렬화 -----
+
+poke:pokemon-25
+    rdf:type poke:Pokemon, poke:ElectricTypePokemon ;
+    rdfs:label "피카츄"@ko ;
+    poke:dexNumber "25"^^xsd:integer ;
+    poke:hasType poke:ElectricType ;
+    poke:height "0.4"^^xsd:decimal ;
+    poke:weight "6.0"^^xsd:decimal ;
+    poke:hp "35"^^xsd:integer ;
+    poke:attack "55"^^xsd:integer ;
+    poke:defense "40"^^xsd:integer ;
+    poke:spAttack "50"^^xsd:integer ;
+    poke:spDefense "50"^^xsd:integer ;
+    poke:speed "90"^^xsd:integer ;
+    poke:fromGeneration poke:gen-1 ;
+    poke:livesIn poke:habitat-forest ;
+    poke:hasAbility poke:ability-static, poke:ability-lightning-rod ;
+    poke:hasEggGroup poke:egg-group-ground, poke:egg-group-fairy ;
+    poke:isLegendary "false"^^xsd:boolean ;
+    poke:hasMove poke:move-mega-punch, poke:move-pay-day, poke:move-thunder-punch, poke:move-slam ;
+    poke:evolvesFrom poke:pokemon-172 ;
+    poke:evolvesTo poke:pokemon-26 .
+
+poke:pokemon-26
+    rdf:type poke:Pokemon, poke:ElectricTypePokemon ;
+    rdfs:label "라이츄"@ko ;
+    poke:dexNumber "26"^^xsd:integer ;
+    poke:hasType poke:ElectricType ;
+    poke:height "0.8"^^xsd:decimal ;
+    poke:weight "30.0"^^xsd:decimal ;
+    poke:hp "60"^^xsd:integer ;
+    poke:attack "90"^^xsd:integer ;
+    poke:defense "55"^^xsd:integer ;
+    poke:spAttack "90"^^xsd:integer ;
+    poke:spDefense "80"^^xsd:integer ;
+    poke:speed "110"^^xsd:integer ;
+    poke:fromGeneration poke:gen-1 ;
+    poke:livesIn poke:habitat-forest ;
+    poke:hasAbility poke:ability-static, poke:ability-lightning-rod ;
+    poke:hasEggGroup poke:egg-group-ground, poke:egg-group-fairy ;
+    poke:isLegendary "false"^^xsd:boolean ;
+    poke:hasMove poke:move-mega-punch, poke:move-pay-day, poke:move-thunder-punch, poke:move-slam ;
+    poke:evolvesFrom poke:pokemon-25 .
+
+poke:pokemon-172
+    rdf:type poke:Pokemon, poke:ElectricTypePokemon ;
+    rdfs:label "피츄"@ko ;
+    poke:dexNumber "172"^^xsd:integer ;
+    poke:hasType poke:ElectricType ;
+    poke:height "0.3"^^xsd:decimal ;
+    poke:weight "2.0"^^xsd:decimal ;
+    poke:hp "20"^^xsd:integer ;
+    poke:attack "40"^^xsd:integer ;
+    poke:defense "15"^^xsd:integer ;
+    poke:spAttack "35"^^xsd:integer ;
+    poke:spDefense "35"^^xsd:integer ;
+    poke:speed "60"^^xsd:integer ;
+    poke:fromGeneration poke:gen-2 ;
+    poke:livesIn poke:habitat-forest ;
+    poke:hasAbility poke:ability-static, poke:ability-lightning-rod ;
+    poke:hasEggGroup poke:egg-group-no-eggs ;
+    poke:isLegendary "false"^^xsd:boolean ;
+    poke:hasMove poke:move-double-slap, poke:move-mega-punch, poke:move-thunder-punch, poke:move-mega-kick ;
+    poke:evolvesTo poke:pokemon-25 .
+
+poke:pokemon-6
+    rdf:type poke:Pokemon, poke:DualTypePokemon, poke:FireTypePokemon, poke:FlyingTypePokemon ;
+    rdfs:label "리자몽"@ko ;
+    poke:dexNumber "6"^^xsd:integer ;
+    poke:hasType poke:FireType, poke:FlyingType ;
+    poke:height "1.7"^^xsd:decimal ;
+    poke:weight "90.5"^^xsd:decimal ;
+    poke:hp "78"^^xsd:integer ;
+    poke:attack "84"^^xsd:integer ;
+    poke:defense "78"^^xsd:integer ;
+    poke:spAttack "109"^^xsd:integer ;
+    poke:spDefense "85"^^xsd:integer ;
+    poke:speed "100"^^xsd:integer ;
+    poke:fromGeneration poke:gen-1 ;
+    poke:livesIn poke:habitat-mountain ;
+    poke:hasAbility poke:ability-blaze, poke:ability-solar-power ;
+    poke:hasEggGroup poke:egg-group-monster, poke:egg-group-dragon ;
+    poke:isLegendary "false"^^xsd:boolean ;
+    poke:hasMove poke:move-mega-punch, poke:move-fire-punch, poke:move-thunder-punch, poke:move-scratch ;
+    poke:evolvesFrom poke:pokemon-5 .
+
+poke:pokemon-1
+    rdf:type poke:Pokemon, poke:DualTypePokemon, poke:GrassTypePokemon, poke:PoisonTypePokemon ;
+    rdfs:label "이상해씨"@ko ;
+    poke:dexNumber "1"^^xsd:integer ;
+    poke:hasType poke:GrassType, poke:PoisonType ;
+    poke:height "0.7"^^xsd:decimal ;
+    poke:weight "6.9"^^xsd:decimal ;
+    poke:hp "45"^^xsd:integer ;
+    poke:attack "49"^^xsd:integer ;
+    poke:defense "49"^^xsd:integer ;
+    poke:spAttack "65"^^xsd:integer ;
+    poke:spDefense "65"^^xsd:integer ;
+    poke:speed "45"^^xsd:integer ;
+    poke:fromGeneration poke:gen-1 ;
+    poke:livesIn poke:habitat-grassland ;
+    poke:hasAbility poke:ability-overgrow, poke:ability-chlorophyll ;
+    poke:hasEggGroup poke:egg-group-monster, poke:egg-group-plant ;
+    poke:isLegendary "false"^^xsd:boolean ;
+    poke:hasMove poke:move-razor-wind, poke:move-swords-dance, poke:move-cut, poke:move-bind ;
+    poke:evolvesTo poke:pokemon-2 .
+
+poke:pokemon-150
+    rdf:type poke:Pokemon, poke:LegendaryPokemon, poke:PsychicTypePokemon ;
+    rdfs:label "뮤츠"@ko ;
+    poke:dexNumber "150"^^xsd:integer ;
+    poke:hasType poke:PsychicType ;
+    poke:height "2.0"^^xsd:decimal ;
+    poke:weight "122.0"^^xsd:decimal ;
+    poke:hp "106"^^xsd:integer ;
+    poke:attack "110"^^xsd:integer ;
+    poke:defense "90"^^xsd:integer ;
+    poke:spAttack "154"^^xsd:integer ;
+    poke:spDefense "90"^^xsd:integer ;
+    poke:speed "130"^^xsd:integer ;
+    poke:fromGeneration poke:gen-1 ;
+    poke:livesIn poke:habitat-rare ;
+    poke:hasAbility poke:ability-pressure, poke:ability-unnerve ;
+    poke:hasEggGroup poke:egg-group-no-eggs ;
+    poke:isLegendary "true"^^xsd:boolean ;
+    poke:hasMove poke:move-mega-punch, poke:move-pay-day, poke:move-fire-punch, poke:move-ice-punch .
+
+# ----- 타입 효과 샘플 (불꽃·물) -----
+poke:FireType a poke:Type ;
+    rdfs:label "불꽃타입"@ko ;
+    poke:strongAgainst poke:GrassType, poke:IceType, poke:BugType, poke:SteelType ;
+    poke:weakAgainst poke:WaterType, poke:GroundType, poke:RockType .
+
+poke:WaterType a poke:Type ;
+    rdfs:label "물타입"@ko ;
+    poke:strongAgainst poke:FireType, poke:GroundType, poke:RockType ;
+    poke:weakAgainst poke:GrassType, poke:ElectricType .
