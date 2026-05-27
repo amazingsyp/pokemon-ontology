@@ -3089,7 +3089,7 @@ var rs=function(){function e(e){return-e.tension*e.x-e.friction*e.v}function t(t
     const colR = el('div', { className: 'match-col' });
     colR.appendChild(el('h5', { text: '오른쪽' }));
 
-    const pairs = {};   // {leftId: rightId}
+    const pairs = {};   // {leftId: rightId} — 같은 rightId가 여러 leftId에 매핑될 수 있음 (N:1)
     let selectedLeft = null;
 
     function getId(o, i, side) {
@@ -3098,14 +3098,47 @@ var rs=function(){function e(e){return-e.tension*e.x-e.friction*e.v}function t(t
     }
     function getLabel(o) { return typeof o === 'string' ? o : (o.label || o.text || JSON.stringify(o)); }
 
+    // 매칭 상태 시각 갱신: 왼쪽엔 어떤 오른쪽과 짝지어졌는지, 오른쪽엔 몇 개와 짝지어졌는지.
+    function refresh() {
+      left.forEach((l, i) => {
+        const id = getId(l, i, 'L');
+        const card = colL.querySelector(`[data-id="${id}"]`);
+        if (!card) return;
+        const base = getLabel(l);
+        const targetId = pairs[id];
+        if (targetId) {
+          const r = right.find((rr, j) => getId(rr, j, 'R') === targetId);
+          card.textContent = `${base} → ${r ? getLabel(r) : targetId}`;
+          card.classList.add('matched');
+        } else {
+          card.textContent = base;
+          card.classList.remove('matched');
+        }
+        if (selectedLeft !== id) card.classList.remove('selected');
+      });
+      right.forEach((r, i) => {
+        const id = getId(r, i, 'R');
+        const card = colR.querySelector(`[data-id="${id}"]`);
+        if (!card) return;
+        const base = getLabel(r);
+        const count = Object.values(pairs).filter((v) => v === id).length;
+        card.textContent = count > 0 ? `${base} · ${count}개 매칭` : base;
+        if (count > 0) card.classList.add('matched'); else card.classList.remove('matched');
+      });
+    }
+
     left.forEach((l, i) => {
       const id = getId(l, i, 'L');
       const card = el('div', { className: 'match-card', text: getLabel(l), attrs: { 'data-id': id } });
       card.addEventListener('click', () => {
-        if (card.classList.contains('matched')) return;
+        // 같은 카드를 다시 누르면 선택 해제
+        if (selectedLeft === id) { selectedLeft = null; refresh(); return; }
+        // 이미 매칭된 카드를 누르면 매칭 해제 후 재선택 모드로
+        if (pairs[id]) delete pairs[id];
+        selectedLeft = id;
         [...colL.querySelectorAll('.match-card')].forEach((c) => c.classList.remove('selected'));
         card.classList.add('selected');
-        selectedLeft = id;
+        refresh();
       });
       colL.appendChild(card);
     });
@@ -3113,14 +3146,11 @@ var rs=function(){function e(e){return-e.tension*e.x-e.friction*e.v}function t(t
       const id = getId(r, i, 'R');
       const card = el('div', { className: 'match-card', text: getLabel(r), attrs: { 'data-id': id } });
       card.addEventListener('click', () => {
-        if (card.classList.contains('matched')) return;
+        // 오른쪽 카드는 항상 재사용 가능 (N:1 매칭 허용). 단, 먼저 왼쪽을 선택해야 함.
         if (!selectedLeft) { showToast('먼저 왼쪽 카드를 선택해 주세요.'); return; }
         pairs[selectedLeft] = id;
-        const lCard = colL.querySelector(`[data-id="${selectedLeft}"]`);
-        if (lCard) { lCard.classList.add('matched'); lCard.classList.remove('selected'); lCard.textContent = lCard.textContent + ' ✓'; }
-        card.classList.add('matched');
-        card.textContent = card.textContent + ' ✓';
         selectedLeft = null;
+        refresh();
       });
       colR.appendChild(card);
     });
